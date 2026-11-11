@@ -1,0 +1,1560 @@
+/* --- Original stylesheet: inline-style-2 --- */
+/* Turn deadlines and board clarity — independent of board sizing. */
+    #board .rr-status-layer,
+    #board .rr-status-floating,
+    #board .rr-status-stack,
+    .fx-avatar .rr-status-stack {
+      display: none !important;
+    }
+
+    #rrWheelTimer {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      width: 100%;
+      min-height: 29px;
+      border: 1px solid rgba(122, 214, 237, .23);
+      border-radius: 9px;
+      background: rgba(6, 15, 39, .65);
+      padding: 4px 9px;
+      margin: 5px 0 7px;
+      box-sizing: border-box;
+    }
+
+    #rrWheelTimer.hidden {
+      display: none !important;
+    }
+
+    #rrWheelTimer .rr-clock-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #c4eaf8;
+      white-space: nowrap;
+    }
+
+    #rrWheelTimer .rr-clock-track {
+      flex: 1;
+      min-width: 18px;
+      height: 6px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    #rrWheelTimer .rr-clock-fill {
+      display: block;
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #54d9ca, #8ea2ff);
+      transition: width .12s linear;
+    }
+
+    #rrWheelTimer .rr-clock-value {
+      font-size: 14px;
+      font-weight: 900;
+      min-width: 28px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: #f9f2d9;
+    }
+
+    #rrWheelTimer.rr-clock-warning .rr-clock-fill,
+    #timerBox.rr-clock-warning #timerFill {
+      background: #fa815f !important;
+    }
+
+    #rrWheelTimer.rr-clock-warning .rr-clock-value,
+    #timerBox.rr-clock-warning #timeLabel {
+      color: #ffab8b !important;
+    }
+
+    #timerBox {
+      margin-top: 9px;
+    }
+
+    @media(max-width:700px) {
+      #rrWheelTimer {
+        min-height: 28px;
+        padding: 3px 7px;
+      }
+
+      #rrWheelTimer .rr-clock-label {
+        font-size: 9px;
+      }
+    }
+
+    /* Hide only the redundant right-side Expedition Tracker. This does not touch
+   the board dimensions, placement, player standings, or mobile Race Info. */
+    #gameScreen #expeditionProgress#expeditionProgress {
+      display: none !important;
+    }
+
+
+/* --- Original stylesheet: assets/css/audio-header-controls.css --- */
+/* Audio + fullscreen header buttons. Intentionally no board or gameplay layout rules. */
+    html body .app>.topbar #rrTopFullscreenBtn {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    @media(max-width:680px) {
+      html body .app>.topbar #rrTopFullscreenBtn {
+        font-size: 18px !important;
+        line-height: 1 !important
+      }
+
+      html body .app>.topbar #rrTopFullscreenBtn span {
+        display: none !important
+      }
+    }
+
+    @media(max-width:420px) {
+      html body .app>.topbar .top-actions {
+        gap: 3px !important;
+        flex: 0 0 auto !important;
+        flex-wrap: nowrap !important
+      }
+
+      html body .app>.topbar .top-actions>.btn {
+        box-sizing: border-box !important;
+        flex: 0 0 29px !important;
+        width: 29px !important;
+        min-width: 29px !important;
+        max-width: 29px !important;
+        padding: 2px !important;
+        height: 33px !important;
+        min-height: 33px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      html body .app>.topbar .brand {
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+        gap: 5px !important
+      }
+
+      html body .app>.topbar .brandmark {
+        width: 28px !important;
+        height: 28px !important;
+        flex: 0 0 28px !important;
+        font-size: 17px !important
+      }
+
+      html body .app>.topbar .brand b {
+        font-size: clamp(9px, 2.8vw, 12px) !important
+      }
+
+      html body .app>.topbar .brand small {
+        display: none !important
+      }
+    }
+
+    /* Preserve the original header height and board Y position on narrow portrait phones. */
+    @media(max-width:420px) and (orientation:portrait) {
+      html body.in-game .app>.topbar {
+        min-height: 48px !important
+      }
+    }
+
+
+/* --- Original stylesheet: assets/css/named-player-colors.css --- */
+/* Player setup only. No gameplay board geometry or global layout changes. */
+    #setupScreen .player-editor .options-line {
+      gap: 6px;
+    }
+    #setupScreen .player-editor .options-line .color-dot.rr-color-choice {
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: auto;
+      height: auto;
+      min-width: 0;
+      min-height: 36px;
+      padding: 5px 8px;
+      gap: 6px;
+      border: 1px solid #637d9c;
+      border-radius: 10px;
+      background: #152641;
+      color: #f1f7ff;
+      font: 700 11px/1.3 system-ui, sans-serif;
+      box-shadow: none;
+      text-align: left;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    #setupScreen .player-editor .rr-color-swatch {
+      width: 17px;
+      height: 17px;
+      flex: none;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+    }
+    #setupScreen .player-editor .color-dot.rr-color-choice.active {
+      border-color: #fff4c0;
+      background: #294465;
+      box-shadow: inset 0 0 0 1px #e5d8b9, 0 0 0 1px #b5d7fc;
+    }
+    #setupScreen .player-editor .color-dot.rr-color-choice:hover,
+    #setupScreen .player-editor .color-dot.rr-color-choice:focus-visible {
+      border-color: #c4e4ff;
+    }
+    #setupScreen .player-editor .color-dot.rr-color-choice.active .rr-color-name::after {
+      content: " ✓";
+      color: #b7f3cf;
+    }
+    @media (max-width: 420px) {
+      #setupScreen .player-editor .options-line .color-dot.rr-color-choice {
+        font-size: 10px;
+        min-height: 34px;
+        padding: 4px 6px;
+        gap: 4px;
+      }
+      #setupScreen .player-editor .rr-color-swatch { width: 14px; height: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #gameScreen .rr-portal-fate:not(.rr-card-no-motion) .rr-card-inner {
+        transition: transform .8s cubic-bezier(.15,.7,.17,1) !important;
+        transition-duration: .8s !important;
+      }
+    }
+
+
+/* --- Original stylesheet: rr-face-picker-styles --- */
+/* Restored offline character picker. Game board/layout styles remain unchanged. */
+#setupScreen .rr-face-picker {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+  margin:8px 0 12px;
+}
+#setupScreen .rr-face-choice {
+  appearance:none;
+  -webkit-appearance:none;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  min-width:0;
+  min-height:103px;
+  padding:8px 3px 7px;
+  border:2px solid #506d93;
+  border-radius:13px;
+  background:linear-gradient(180deg,#304b70 0%,#1b2f4c 100%);
+  color:#eaf5ff;
+  box-shadow:0 5px 13px rgba(0,0,0,.12);
+  cursor:pointer;
+  transition:border-color .16s,background .16s,transform .16s;
+}
+#setupScreen .rr-face-choice:hover {
+  border-color:#a2d9fb;
+  background:linear-gradient(180deg,#3b648e,#203a60);
+}
+#setupScreen .rr-face-choice[aria-pressed="true"] {
+  border-color:#eaf4a4;
+  background:linear-gradient(180deg,#47769e 0%,#294c73 100%);
+  box-shadow:inset 0 0 0 1px #eaf4a4,0 0 0 2px rgba(236,245,177,.17);
+}
+#setupScreen .rr-face-choice:focus-visible {outline:3px solid #aeeaff; outline-offset:2px;}
+#setupScreen .rr-face-image {
+  width:100%;
+  height:69px;
+  max-width:82px;
+  object-fit:contain;
+  object-position:center;
+  flex-shrink:0;
+  pointer-events:none;
+  filter:drop-shadow(0 3px 2px rgba(0,0,0,.32));
+}
+#setupScreen .rr-face-label {
+  display:block;
+  max-width:100%;
+  margin-top:3px;
+  font:800 10px/1.15 system-ui,sans-serif;
+  text-align:center;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  pointer-events:none;
+}
+#setupScreen .rr-face-choice[aria-pressed="true"]::after {
+  content:"✓";
+  position:absolute;
+  right:4px;top:3px;
+  width:17px;height:17px;
+  border-radius:50%;
+  background:#dff3ba;color:#214254;
+  font:900 12px/17px system-ui;
+}
+/* Retain the native select's values, events and screen-reader semantics. */
+#setupScreen .rr-face-native-select {
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+@media(max-width:680px) {
+ #setupScreen .rr-face-picker {grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;}
+ #setupScreen .rr-face-choice {min-height:101px;padding:7px 3px 6px;border-radius:11px;}
+ #setupScreen .rr-face-image {height:73px;}
+ #setupScreen .rr-face-label {font-size:10px;line-height:1.1;}
+}
+@media(max-width:340px) {
+ #setupScreen .rr-face-picker {gap:5px;}
+ #setupScreen .rr-face-choice {min-height:90px;}
+ #setupScreen .rr-face-image {height:64px;}
+}
+
+/* Character preview: five real idle/walk frames cropped from original sprite art.
+   All changes are confined to the local setup hero selector. */
+#setupScreen .rr-face-art {
+  /* Each sprite-strip frame is 150 by 150 pixels: render a square, never a rectangle. */
+  position:relative;
+  display:block;
+  width:min(100%,82px);
+  height:auto;
+  aspect-ratio:1 / 1;
+  max-width:82px;
+  flex:0 0 auto;
+  overflow:hidden;
+}
+#setupScreen .rr-face-art .rr-face-image {
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:contain;
+  object-position:center;
+}
+#setupScreen .rr-face-motion {
+  position:absolute; inset:0;
+  background-repeat:no-repeat;
+  background-size:500% 100%;
+  background-position:0% 0%;
+  pointer-events:none;
+  filter:drop-shadow(0 3px 2px rgba(0,0,0,.25));
+  animation:rr-character-preview-cycle 2.15s steps(1,end) infinite;
+}
+/* Frame 1 = standing face; frames 2-5 = actual walk sprite poses.
+   Returning to frame 1 avoids a permanently walking idle avatar. */
+@keyframes rr-character-preview-cycle {
+   0%,19.99% { background-position:0% 0%; }
+  20%,34.99% { background-position:25% 0%; }
+  35%,49.99% { background-position:50% 0%; }
+  50%,64.99% { background-position:75% 0%; }
+  65%,79.99% { background-position:100% 0%; }
+  80%,100% { background-position:0% 0%; }
+}
+/* Avoid two artworks overlapping while the sprite strip loads. */
+#setupScreen .rr-face-art:not(.rr-face-ready) .rr-face-motion {opacity:0;}
+#setupScreen .rr-face-art.rr-face-ready .rr-face-image {opacity:0;}
+/* The intrinsic square aspect ratio scales naturally on narrow mobile cards. */
+@media(prefers-reduced-motion:reduce) {
+  /* System accessibility preference only affects the cosmetic selector preview.
+     Real in-game travel still uses its essential gameplay frames. */
+  #setupScreen .rr-face-motion {animation:none;}
+}
+
+
+/* --- Original stylesheet: assets/css/arcade-effects-plus.css --- */
+/* Radical Rush · Extra gameplay feedback effects. Visual-only; no layout changes. */
+.rrfx-canvas {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  z-index: 2147483000;
+  display: block;
+  pointer-events: none !important;
+  user-select: none;
+  contain: strict;
+}
+/* The existing portal artwork receives light, not an extra tile or badge. */
+#gameScreen:not(.hidden) #board.key-animate .tile.boost .tile-special img {
+  animation: rrfx-portal-gleam 3.7s ease-in-out infinite alternate;
+  will-change: filter;
+}
+#gameScreen:not(.hidden) .stand-row.is-turn {
+  animation: rrfx-turn-glint 2.9s ease-in-out infinite;
+}
+#gameScreen:not(.hidden) #dice.is-rolling .rr-wheel-pointer {
+  filter: drop-shadow(0 0 6px rgba(255,233,157,.9)) drop-shadow(0 0 12px rgba(127,226,255,.65));
+}
+@keyframes rrfx-portal-gleam {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(102,251,245,.35)); }
+  50% { filter: drop-shadow(0 0 9px rgba(121,255,228,.92)) drop-shadow(0 0 13px rgba(146,106,255,.48)); }
+}
+@keyframes rrfx-turn-glint {
+  0%,100% { box-shadow: inset 0 0 0 1px rgba(128,224,255,.04); }
+  50% { box-shadow: inset 0 0 0 1px rgba(128,224,255,.38), 0 0 15px rgba(114,168,255,.12); }
+}
+@media (max-width: 680px) {
+  #gameScreen:not(.hidden) #board.key-animate .tile.boost .tile-special img {
+    animation-duration: 5.2s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #gameScreen:not(.hidden) #board.key-animate .tile.boost .tile-special img,
+  #gameScreen:not(.hidden) .stand-row.is-turn { animation: none !important; }
+}
+/* This existing option governs only decorative effects, never core hero movement. */
+body:has(#settingMotion:not(:checked)) #gameScreen .stand-row.is-turn,
+body:has(#settingMotion:not(:checked)) #gameScreen #board .tile.boost .tile-special img {
+  animation: none !important;
+}
+
+
+/* ===== Radical Rush: Notebook v2 (replaces the original floating scratch pad) ===== */
+button.rr2-launch {
+  display:flex !important;align-items:center;justify-content:center;gap:9px;
+  padding:10px 13px !important;min-height:45px;width:100%;margin:12px 0 !important;
+  color:#effbff !important; font:800 14px/1.25 system-ui,sans-serif !important;
+  background:linear-gradient(120deg,#3f418b,#235e83) !important;
+  border:1px solid #91cfff !important;border-radius:13px !important;
+  box-shadow:0 3px 15px #06132d4a !important;cursor:pointer;touch-action:manipulation;
+}
+button.rr2-launch:hover,button.rr2-launch:focus-visible {background:linear-gradient(120deg,#5355ad,#237b9f) !important;outline:2px solid #bdeeff;outline-offset:2px}
+button.rr2-launch[hidden] {display:none !important}
+dialog#rr2Notebook[hidden] {display:none !important}
+dialog#rr2Notebook {
+  --rr2-ink:#183652;--rr2-border:#d6e5ef;--rr2-muted:#557289;
+  position:fixed !important;inset:0 !important;margin:auto !important;
+  padding:0 !important;width:min(1070px,calc(100vw - 32px)) !important;
+  height:min(790px,calc(100dvh - 28px)) !important;max-width:none !important;max-height:none !important;
+  overflow:hidden !important;box-sizing:border-box !important;
+  color:var(--rr2-ink) !important;background:#f5f9ff !important;
+  border:1px solid #b9d7ee !important;border-radius:22px !important;
+  box-shadow:0 30px 110px #071329b0,0 0 0 1px #fff8 inset !important;
+  font:15px/1.42 system-ui,-apple-system,Segoe UI,sans-serif !important;
+  color-scheme:light;z-index:2147483600 !important;
+}
+dialog#rr2Notebook[open] {display:flex !important;flex-direction:column !important;animation:rr2Show .19s ease-out both}
+dialog#rr2Notebook::backdrop {background:rgba(5,14,35,.82);backdrop-filter:blur(4px)}
+#rr2Notebook *, #rr2Notebook *::before,#rr2Notebook *::after {box-sizing:border-box}
+#rr2Notebook button {font-family:inherit;cursor:pointer;touch-action:manipulation}
+#rr2Notebook button:focus-visible, #rr2Notebook textarea:focus-visible {outline:3px solid #f5b747 !important;outline-offset:2px}
+#rr2Notebook .rr2-top {
+  flex:none;min-height:69px;padding:13px 18px 13px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  color:#fff;background:linear-gradient(115deg,#252b62,#334e85 60%,#176986);
+}
+#rr2Notebook .rr2-identity {display:flex;align-items:center;gap:12px;min-width:0}
+#rr2Notebook .rr2-emblem {display:grid;place-items:center;width:43px;height:43px;flex:none;border-radius:14px;background:#ffffff23;font-size:25px;border:1px solid #ffffff4c}
+#rr2Notebook .rr2-title {font-weight:950;font-size:clamp(18px,2vw,24px);letter-spacing:.01em;line-height:1.08;color:white}
+#rr2Notebook .rr2-subtitle {font-size:11px;font-weight:650;color:#d7eaff;line-height:1.25;margin-top:3px}
+#rr2Notebook .rr2-close {display:grid;place-items:center;min-width:40px;height:40px;padding:0;border:1px solid #ffffff70;border-radius:12px;background:#ffffff1e;color:white;font-size:25px;font-weight:500}
+#rr2Notebook .rr2-close:hover {background:#ffffff35}
+#rr2Notebook .rr2-problem {flex:none;display:flex;gap:12px;align-items:center;padding:10px 20px;background:#eaf4ff;border-bottom:1px solid #cbdfe9;min-height:66px;max-height:120px;overflow:auto}
+#rr2Notebook .rr2-problem-label {font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:#45627b;white-space:nowrap;border-right:1px solid #b9cfdf;padding-right:12px}
+#rr2Notebook .rr2-problem-text {font-weight:850;font-size:clamp(17px,2vw,23px);line-height:1.5;min-width:0;color:#18314f;overflow-wrap:anywhere}
+#rr2Notebook .rr2-tabs {display:none}
+#rr2Notebook .rr2-body {display:grid;grid-template-columns:minmax(0,1.26fr) minmax(280px,.74fr);flex:1;min-height:0}
+#rr2Notebook .rr2-drawpane,#rr2Notebook .rr2-typepane {display:flex;flex-direction:column;min-height:0;overflow:hidden}
+#rr2Notebook .rr2-drawpane {background:#eef5ff;border-right:1px solid #cfdfed}
+#rr2Notebook .rr2-typepane {background:#fffefa}
+#rr2Notebook .rr2-paneheading {display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px 8px;flex:none}
+#rr2Notebook .rr2-paneheading strong {font-size:13px;letter-spacing:.03em;color:#2b4c65}
+#rr2Notebook .rr2-hint {font-size:11px;color:#6d8397;font-weight:650}
+#rr2Notebook .rr2-tools {display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:3px 12px 10px;flex:none}
+#rr2Notebook .rr2-tool {min-height:35px;padding:6px 11px;border:1px solid #c4d7e7;border-radius:9px;background:white;color:#254760;font-size:12px;font-weight:800}
+#rr2Notebook .rr2-tool[aria-pressed="true"] {color:#fff;background:#314f85;border-color:#314f85}
+#rr2Notebook .rr2-tool:disabled {opacity:.36;cursor:default}
+#rr2Notebook .rr2-color {width:28px;height:28px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #aabbd0;padding:0;min-width:28px}
+#rr2Notebook .rr2-color[aria-pressed="true"] {box-shadow:0 0 0 3px #3077b0}
+#rr2Notebook .rr2-toolseparator {width:1px;height:21px;background:#c5d6e3;margin:0 2px}
+#rr2Notebook .rr2-paper-wrap {display:flex;flex:1;min-height:0;padding:0 14px 13px}
+#rr2Notebook .rr2-paper {width:100%;height:100%;min-height:150px;border:1px solid #bad7e9;border-radius:14px;background-color:#fff;overflow:hidden;position:relative;box-shadow:0 2px 8px #1b457410}
+#rr2Notebook .rr2-paper[ data-grid="true"] {background-image:linear-gradient(#e0eaf3 1px,transparent 1px),linear-gradient(90deg,#e0eaf3 1px,transparent 1px);background-size:25px 25px}
+#rr2Notebook .rr2-paper::before {content:'';position:absolute;top:0;bottom:0;left:37px;border-left:1px solid #f3bfce;pointer-events:none}
+#rr2Notebook .rr2-paper-label {position:absolute;right:12px;bottom:7px;font-size:10px;letter-spacing:.12em;color:#8da2b3;font-weight:900;pointer-events:none}
+#rr2Notebook #rr2Canvas {position:relative;width:100%;height:100%;display:block;cursor:crosshair;touch-action:none;user-select:none;z-index:1}
+#rr2Notebook .rr2-keyboard {display:flex;flex-wrap:wrap;gap:6px;padding:1px 14px 10px}
+#rr2Notebook .rr2-key {min-width:35px;min-height:36px;padding:4px 8px;font-size:17px;font-weight:750;border:1px solid #cbdce8;background:#edf6ff;color:#264b69;border-radius:9px}
+#rr2Notebook .rr2-key:active {background:#d4ecff}
+#rr2Notebook .rr2-notes {display:block;width:calc(100% - 28px);height:100%;min-height:130px;margin:0 14px 14px;padding:15px 16px;border:1px solid #ccd8df;border-radius:13px;resize:none;outline:none;background:repeating-linear-gradient(to bottom,#fffefa 0px,#fffefa 30px,#e1e7ed 31px,#fffefa 32px);background-position:0 6px;color:#263950;font:16px/32px ui-monospace,Consolas,Menlo,monospace}
+#rr2Notebook .rr2-notes::placeholder {color:#8498a6;font-weight:400}
+#rr2Notebook .rr2-footer {flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #d5e0e9;background:#f5faff;padding:9px 17px;font-size:12px;color:#607b8f}
+#rr2Notebook .rr2-footer button {background:#2e5887;color:#fff;border:0;border-radius:9px;padding:8px 19px;font-weight:800;min-height:35px}
+@keyframes rr2Show {from{opacity:.4;transform:translateY(13px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media (max-width:760px) {
+  dialog#rr2Notebook {width:calc(100vw - 12px) !important;height:calc(100dvh - 12px) !important;border-radius:16px !important}
+  #rr2Notebook .rr2-top {padding:10px 12px;min-height:61px}
+  #rr2Notebook .rr2-emblem {width:35px;height:35px;font-size:20px;border-radius:10px}
+  #rr2Notebook .rr2-subtitle {font-size:10px}
+  #rr2Notebook .rr2-close {height:37px;min-width:37px}
+  #rr2Notebook .rr2-problem {padding:8px 12px;gap:8px;min-height:58px;max-height:108px}
+  #rr2Notebook .rr2-problem-label {font-size:9px;padding-right:8px}
+  #rr2Notebook .rr2-tabs {display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:9px 12px 5px;background:#edf5ff}
+  #rr2Notebook .rr2-tab {display:flex;align-items:center;justify-content:center;min-height:39px;border-radius:10px;background:#fff;border:1px solid #c9d9e9;color:#375f83;font-weight:850;font-size:13px}
+  #rr2Notebook .rr2-tab[aria-selected="true"] {background:#315b8e;color:white;border-color:#315b8e}
+  #rr2Notebook .rr2-body {display:flex;flex:1;min-height:0}
+  #rr2Notebook .rr2-drawpane,#rr2Notebook .rr2-typepane {width:100%;border:0;flex:1}
+  #rr2Notebook[data-tab="draw"] .rr2-typepane {display:none}
+  #rr2Notebook[data-tab="type"] .rr2-drawpane {display:none}
+  #rr2Notebook .rr2-paneheading {padding:8px 12px 7px}
+  #rr2Notebook .rr2-tools {gap:5px;padding:2px 9px 8px}
+  #rr2Notebook .rr2-tool {min-height:35px;padding:5px 8px;font-size:11px}
+  #rr2Notebook .rr2-color {width:24px;height:24px;min-width:24px}
+  #rr2Notebook .rr2-paper-wrap {padding:0 10px 10px}
+  #rr2Notebook .rr2-notes {height:100%;margin:0 10px 10px;width:calc(100% - 20px)}
+  #rr2Notebook .rr2-keyboard {padding:0 10px 10px}
+  #rr2Notebook .rr2-footer {padding:7px 11px;font-size:11px}
+}
+@media (max-width:760px) and (max-height:580px) {
+  #rr2Notebook .rr2-subtitle{display:none}
+  #rr2Notebook .rr2-top{min-height:50px;padding:6px 12px}
+  #rr2Notebook .rr2-problem{min-height:42px;padding:4px 11px}
+  #rr2Notebook .rr2-paneheading{display:none}
+  #rr2Notebook .rr2-tabs{padding:5px 10px}
+  #rr2Notebook .rr2-tools{padding:5px 8px}
+  #rr2Notebook .rr2-footer{padding:4px 10px}
+}
+@media (prefers-reduced-motion:reduce){dialog#rr2Notebook[open]{animation:none}}
+
+/* Notebook v3: graph paper only by default; math typing is optional. */
+#rr2Notebook .rr2-tabs, #rr2Notebook .rr2-typepane {display:none !important}
+#rr2Notebook .rr2-body {display:flex !important;flex:1;min-height:0}
+#rr2Notebook .rr2-drawpane {display:flex !important;flex:1 !important;width:100% !important;min-width:0;border-right:0 !important}
+#rr2Notebook .rr2-paper-wrap {flex:1;min-height:145px}
+#rr2Notebook .rr2-equation-area {flex:none;border-top:1px solid #ccddeb;background:#f4f9ff;padding:7px 14px 9px}
+#rr2Notebook .rr2-equation-toggle {display:flex;align-items:center;justify-content:space-between;gap:8px;max-width:100%;width:100%;padding:8px 12px;min-height:37px;border:1px solid #b9ccdd;border-radius:10px;background:#fff;color:#2b5377;font-size:12px;font-weight:850;text-align:left}
+#rr2Notebook .rr2-equation-toggle:hover {background:#ebf5ff}
+#rr2Notebook .rr2-equation-content[hidden] {display:none !important}
+#rr2Notebook .rr2-equation-content {padding-top:8px;max-height:min(33dvh,185px);overflow:auto}
+#rr2Notebook .rr2-keyboard {padding:0 0 7px;gap:5px}
+#rr2Notebook .rr2-key {min-width:34px;min-height:32px;padding:3px 7px;font-size:16px}
+#rr2Notebook .rr2-notes {margin:0;width:100%;min-height:61px;height:65px;font-size:14px;line-height:26px;background:#fff}
+@media (max-width:760px){
+ #rr2Notebook .rr2-equation-area {padding:5px 9px 7px}
+ #rr2Notebook .rr2-equation-content {max-height:min(27dvh,150px)}
+ #rr2Notebook .rr2-paper-wrap {min-height:140px}
+ #rr2Notebook .rr2-equation-toggle {min-height:35px}
+}
+
+
+/* --- Original stylesheet: assets/css/biome-board-atmosphere.css --- */
+/* Radical Rush — six animated realm atmospheres, canvas follows existing board rect.
+   Pure overlay: never changes board width, height, grid, position or click targets. */
+#rrBiomeAtmosphere.rr-biome-atmosphere {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  display: block;
+  z-index: 1200;
+  pointer-events: none !important;
+  user-select: none !important;
+  contain: strict;
+}
+@media (prefers-reduced-motion: reduce) {
+  #rrBiomeAtmosphere.rr-biome-atmosphere { visibility: hidden; }
+}
+body:has(#settingMotion:not(:checked)) #rrBiomeAtmosphere.rr-biome-atmosphere {visibility:hidden;}
+
+
+/* --- Original stylesheet: assets/css/chest-of-faith.css --- */
+/* Chest of Faith: sidebar-only inventory and non-layout-shifting board hazards. */
+.rr-faith-panel{margin-top:8px;padding:10px 12px;border-radius:13px;border:1px solid rgba(185,163,245,.38);background:linear-gradient(135deg,rgba(45,35,83,.85),rgba(22,35,70,.88));color:#f4ebff;box-shadow:inset 0 1px rgba(255,255,255,.10)}
+.rr-faith-panel.hidden{display:none!important}
+.rr-faith-panel-title{font-weight:900;letter-spacing:.075em;font-size:11px;margin-bottom:6px;color:#f9d8a0}
+.rr-faith-status-line{font-size:12px;font-weight:700;margin-bottom:6px}
+.rr-faith-tool-row{display:flex;flex-wrap:wrap;gap:6px}
+.rr-faith-tool{border:1px solid rgba(242,212,153,.6);border-radius:9px;padding:7px 10px;background:rgba(114,70,159,.35);color:#fff2e6;font:700 12px inherit;cursor:pointer;min-height:34px}
+.rr-faith-tool:hover:not(:disabled){background:rgba(181,102,203,.55)}
+.rr-faith-tool:disabled{opacity:.57;cursor:default}
+.rr-faith-empty{opacity:.75;font-size:11px}
+.rr-faith-hazard{position:absolute!important;z-index:6;right:1px;top:1px;width:26%;height:26%;max-width:25px;max-height:25px;min-width:14px;min-height:14px;display:flex;align-items:center;justify-content:center;border-radius:50%;pointer-events:none;font-size:clamp(10px,1.15vw,18px);line-height:1;background:rgba(27,15,27,.77);box-shadow:0 0 9px rgba(231,164,49,.75);transform:none!important}
+.rr-faith-lava_flask{left:19%;right:auto;top:auto;bottom:3%;width:62%;height:21%;max-width:none;max-height:none;min-height:8px;min-width:0;border:1px solid rgba(255,183,49,.88);border-radius:55% 48% 59% 47%;font-size:0;background:radial-gradient(ellipse at 35% 32%,#ffdc58 0 13%,#ff8c21 20%,#dd3819 57%,#801d18 95%);box-shadow:0 0 12px rgba(255,82,16,.88),inset 0 -2px rgba(72,0,0,.4);opacity:.96}
+.rr-faith-lava_flask::after{content:'';position:absolute;left:34%;top:17%;width:14%;height:38%;border-radius:50%;background:#ffdf66;box-shadow:8px -1px #ffbb39,-8px 3px #ffba31}
+body.fx-enabled .rr-faith-lava_flask{animation:rr-faith-lava-glow 1.4s ease-in-out infinite alternate}
+@keyframes rr-faith-lava-glow{to{filter:brightness(1.28);box-shadow:0 0 17px rgba(255,73,10,.98)}}
+.rr-faith-overlay{position:fixed;inset:0;z-index:100100;background:rgba(8,11,35,.78);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px}
+.rr-faith-overlay.hidden{display:none!important}
+.rr-faith-dialog{background:linear-gradient(145deg,#232449,#1a2244);border:2px solid #d7b37b;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.65);width:min(420px,96vw);max-height:90dvh;overflow:auto;padding:22px;color:#fff}
+.rr-faith-dialog h2{font-size:21px;margin:0 0 9px}.rr-faith-dialog p{line-height:1.5;font-size:14px;color:#dfe4f4}
+.rr-faith-dialog-actions{display:grid;gap:8px;margin:15px 0}
+.rr-faith-choice{padding:12px;background:#484987;color:#fff;border:1px solid #d6ccff;border-radius:12px;cursor:pointer;font-weight:800;text-align:left}
+.rr-faith-choice:hover{background:#5f58a7}
+.rr-faith-tile-select{width:100%;padding:13px;border-radius:10px;color:#181c37;background:#fff;font-size:15px}
+.rr-faith-notice{position:fixed;top:75px;left:50%;transform:translateX(-50%);z-index:100110;max-width:min(92vw,530px);border-radius:12px;padding:12px 18px;background:#242149;border:1px solid #f4cd81;color:white;text-align:center;font-weight:800;box-shadow:0 10px 30px #0008;pointer-events:none}
+.rr-faith-notice.hidden{display:none!important}
+@media(max-width:600px){.rr-faith-panel{padding:8px}.rr-faith-hazard{font-size:11px}.rr-faith-notice{top:62px;font-size:12px}}
+
+/* Chest of Faith replaces the obsolete two-slot legacy treasure bag. */
+#rrAbilityPanel .rr-ability-inventory{display:none!important}
+.rr-prize-overlay .rr-prize-description{max-width:370px;margin:6px auto 12px;line-height:1.45;text-wrap:balance;font-size:13px}
+
+
+/* --- Original stylesheet: assets/css/chest-of-faith-vfx.css --- */
+/* Radical Rush: Chest of Faith - animated effects pack, additive visual-only layer. */
+:root { --rr-faith-gold:#ffd98a; --rr-faith-ice:#a8edff; --rr-faith-lava:#ff7b29; --rr-faith-purple:#d1a5ff; }
+#rrFaithInventory.rr-faith-panel {
+  position:relative; isolation:isolate; overflow:hidden;
+  padding:13px 14px; border:1px solid rgba(252,211,140,.55); border-radius:17px;
+  background:linear-gradient(140deg,rgba(71,44,106,.94),rgba(26,39,87,.94) 65%,rgba(32,27,59,.97));
+  box-shadow:0 9px 28px #07071f45,inset 0 1px rgba(255,255,255,.18),0 0 0 1px rgba(193,141,255,.14);
+}
+#rrFaithInventory::before {content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:linear-gradient(90deg,transparent,#ffe7ad,#b985ff,transparent);opacity:.8;pointer-events:none;}
+#rrFaithInventory::after {content:"✦";position:absolute;right:11px;top:5px;color:#ffe9b4;opacity:.32;font-size:25px;pointer-events:none;}
+#rrFaithInventory .rr-faith-panel-title {font-weight:1000;letter-spacing:.09em;font-size:12px;margin-bottom:9px;color:#ffe5a8;text-shadow:0 1px 5px #0008;}
+#rrFaithInventory .rr-faith-status-line {display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;font-size:11px;}
+#rrFaithInventory .rr-faith-stat {display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 7px;border:1px solid rgba(255,255,255,.19);background:rgba(7,15,49,.42);color:#f8f3ff;font-weight:850;white-space:nowrap;}
+#rrFaithInventory .rr-faith-stat[data-status="shield"] {border-color:#ffe29c80;color:#ffe9b1;}
+#rrFaithInventory .rr-faith-stat[data-status="skip"] {border-color:#ff899a90;color:#ffc4cf;}
+#rrFaithInventory .rr-faith-stat[data-status="slow"] {border-color:#9eefff85;color:#c2f5ff;}
+#rrFaithInventory .rr-faith-stat[data-status="curse"] {border-color:#da91ff85;color:#ebcdff;}
+#rrFaithInventory .rr-faith-tool-row {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+#rrFaithInventory .rr-faith-empty {grid-column:1/-1;display:block;padding:9px 8px;border:1px dashed #c6baff65;border-radius:10px;text-align:center;color:#dcd4fb;}
+#rrFaithInventory .rr-faith-tool {--tool-start:#65449a;--tool-end:#29295a;--tool-accent:#d4b3ff;
+ display:flex;align-items:center;gap:8px;min-width:0;min-height:47px;padding:7px 8px;
+ border:1px solid color-mix(in srgb,var(--tool-accent),transparent 36%);border-radius:12px;
+ background:linear-gradient(132deg,var(--tool-start),var(--tool-end));color:#fff;font:inherit;font-weight:850;text-align:left;
+ box-shadow:inset 0 1px #ffffff4b,0 4px 0 #0e1039a3,0 6px 13px #0708264a;
+ cursor:pointer;position:relative;overflow:hidden;transform:translateY(0);transition:transform .18s,filter .18s,box-shadow .18s;
+}
+#rrFaithInventory .rr-faith-tool::after {content:"";position:absolute;inset:0 auto 0 -80%;width:65%;background:linear-gradient(95deg,transparent,#ffffff36,transparent);transform:skewX(-19deg);transition:left .55s;pointer-events:none;}
+#rrFaithInventory .rr-faith-tool:hover:not(:disabled)::after {left:125%;}
+#rrFaithInventory .rr-faith-tool:hover:not(:disabled),#rrFaithInventory .rr-faith-tool:focus-visible {transform:translateY(-3px);filter:brightness(1.14);box-shadow:inset 0 1px #ffffff70,0 7px 0 #0e1039a3,0 10px 20px #08072685;}
+#rrFaithInventory .rr-faith-tool:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 1px #ffffff50,0 1px 0 #101136;}
+#rrFaithInventory .rr-faith-tool:focus-visible{outline:2px solid #fff7a3;outline-offset:3px;}
+#rrFaithInventory .rr-faith-tool:disabled{opacity:.53;filter:saturate(.67);cursor:not-allowed;box-shadow:none;}
+#rrFaithInventory .rr-faith-tool[data-tool="snowball"]{--tool-start:#276da0;--tool-end:#17375e;--tool-accent:#a6f5ff;}
+#rrFaithInventory .rr-faith-tool[data-tool="air_strike"]{--tool-start:#ac4d56;--tool-end:#57283d;--tool-accent:#ffc18e;}
+#rrFaithInventory .rr-faith-tool[data-tool="lava_flask"]{--tool-start:#9c502a;--tool-end:#58301e;--tool-accent:#ffb069;}
+#rrFaithInventory .rr-faith-tool[data-tool="bear_trap"]{--tool-start:#696579;--tool-end:#343a58;--tool-accent:#ffe0a4;}
+#rrFaithInventory .rr-faith-tool-icon {display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:9px;
+ border:1px solid #ffffff70;background:radial-gradient(circle at 30% 22%,#ffffff55,#ffffff0d 55%,#00000026);font-size:23px;line-height:1;filter:drop-shadow(0 2px 2px #0007);}
+#rrFaithInventory .rr-faith-tool-label{font-size:11px;line-height:1.16;min-width:0;overflow-wrap:anywhere;}
+body.fx-enabled #rrFaithInventory .rr-faith-tool:not(:disabled) .rr-faith-tool-icon{animation:rrFaithToolFloat 2.6s ease-in-out infinite alternate;}
+body.fx-enabled #rrFaithInventory .rr-faith-tool:nth-child(2n) .rr-faith-tool-icon{animation-delay:-1.35s;}
+@keyframes rrFaithToolFloat{0%,100%{transform:translateY(1px) rotate(-7deg)}50%{transform:translateY(-2px) rotate(8deg)}}
+
+/* Polished physical traps are deliberately contained within existing board cells. */
+#board .rr-faith-hazard{z-index:6;pointer-events:none;isolation:isolate;}
+#board .rr-faith-bear_trap{right:0;top:0;left:auto;bottom:auto;width:35%;height:35%;min-width:17px;min-height:17px;max-width:31px;max-height:31px;
+ background:radial-gradient(circle at 45% 45%,#ffdaa2 0 16%,#566e87 17% 40%,#161f37 42% 63%,#b9cad7 66% 77%,#202c3f 79%);border:1px solid #d1dde1;
+ box-shadow:0 2px 5px #0009,0 0 12px #f2d79970;}
+#board .rr-faith-bear_trap::before,#board .rr-faith-bear_trap::after{content:"";position:absolute;top:12%;width:40%;height:69%;border:2px dashed #e8f0f5;border-radius:50%;background:linear-gradient(90deg,#687c97,#b7ccdf,#506c86);}
+#board .rr-faith-bear_trap::before{left:8%;transform:rotate(-27deg);}
+#board .rr-faith-bear_trap::after{right:8%;transform:rotate(27deg);}
+body.fx-enabled #board .rr-faith-bear_trap::before{animation:rrFaithJawLeft 2.4s ease-in-out infinite;}
+body.fx-enabled #board .rr-faith-bear_trap::after{animation:rrFaithJawRight 2.4s ease-in-out infinite;}
+@keyframes rrFaithJawLeft{0%,85%,100%{transform:rotate(-27deg)}92%{transform:rotate(8deg)}}
+@keyframes rrFaithJawRight{0%,85%,100%{transform:rotate(27deg)}92%{transform:rotate(-8deg)}}
+#board .rr-faith-lava_flask{left:13%;right:auto;top:auto;bottom:4%;width:74%;height:25%;max-width:none;max-height:none;min-width:0;min-height:9px;
+ background:radial-gradient(ellipse at 28% 28%,#fff9a1 0 8%,#ffc04e 16%,#f47a21 37%,#b82c20 72%,#521324 100%);
+ border:1px solid #ffce80;border-radius:52% 47% 48% 53%;box-shadow:0 0 12px #ff5c25c9,inset 0 -3px 5px #8b0718aa;}
+#board .rr-faith-lava_flask::before{content:"";position:absolute;inset:-14%;border-radius:50%;border:1px solid #ffb43f78;filter:blur(1px);}
+#board .rr-faith-lava_flask::after{content:"";position:absolute;left:26%;top:10%;width:14%;height:32%;background:#fff59e;border-radius:50%;box-shadow:12px 5px #ffe26e,-8px 1px #ffb442,4px 7px #fff1a4;}
+body.fx-enabled #board .rr-faith-lava_flask{animation:rrFaithLavaLive 1.9s ease-in-out infinite alternate;}
+@keyframes rrFaithLavaLive{0%{filter:brightness(.96);transform:scale(.96) rotate(-3deg)}100%{filter:brightness(1.2);transform:scale(1.04) rotate(2deg);box-shadow:0 0 20px #ff6119,inset 0 -3px 5px #8b0718aa}}
+#board .rr-faith-hazard.rr-faith-just-planted{animation:rrFaithDrop .65s cubic-bezier(.13,1.34,.43,1) both!important;}
+@keyframes rrFaithDrop{0%{opacity:.2;scale:2;rotate:-40deg}65%{opacity:1;scale:.82;rotate:12deg}100%{scale:1;rotate:0deg}}
+#board .token.rr-faith-shielded{overflow:visible;position:relative;isolation:isolate;}
+#board .rr-faith-token-aura{position:absolute;inset:-6px;z-index:2;border:2px solid #ffeca6;border-radius:50%;pointer-events:none;
+ box-shadow:0 0 7px 2px #ffda68,0 0 15px #f1faff9c,inset 0 0 8px #a0f5ff;}
+#board .rr-faith-token-aura::after{content:"✦";position:absolute;right:-6px;top:-12px;font-size:10px;color:#fff4c6;text-shadow:0 0 5px #ffffa8;}
+body.fx-enabled #board .rr-faith-token-aura{animation:rrFaithShieldPulse 2.15s ease-in-out infinite alternate;}
+@keyframes rrFaithShieldPulse{to{box-shadow:0 0 12px 3px #ffd16d,0 0 22px #bff6ff,inset 0 0 9px #fff;transform:scale(1.09)}}
+
+/* Temporary spell visuals: viewport anchored, no board layout shifts. */
+#rrFaithFxLayer{position:fixed;inset:0;z-index:12060;pointer-events:none;overflow:hidden;contain:layout style;}
+.rr-faith-fx{position:absolute;left:0;top:0;transform:translate(-50%,-50%);pointer-events:none;will-change:transform,opacity;}
+.rr-faith-fx-orb{width:87px;height:87px;border-radius:50%;border:2px solid var(--fx-color,#ffe19a);
+ box-shadow:0 0 8px var(--fx-color,#ffe19a),inset 0 0 15px var(--fx-color,#ffe19a);background:radial-gradient(circle,var(--fx-color,#ffe19a) 0,transparent 68%);opacity:.85;
+ animation:rrFaithOrb .85s ease-out forwards;mix-blend-mode:screen;}
+@keyframes rrFaithOrb{0%{transform:translate(-50%,-50%) scale(.15);opacity:0}35%{opacity:.8}100%{transform:translate(-50%,-50%) scale(1.7);opacity:0}}
+.rr-faith-fx-particle{width:8px;height:8px;border-radius:2px;background:var(--fx-color,#ffde93);
+ box-shadow:0 0 10px var(--fx-color,#ffde93);animation:rrFaithParticle .85s cubic-bezier(.12,.62,.4,1) forwards;}
+@keyframes rrFaithParticle{0%{transform:translate(-50%,-50%) scale(1.3) rotate(0);opacity:1}100%{transform:translate(calc(-50% + var(--vx)),calc(-50% + var(--vy))) scale(0) rotate(220deg);opacity:0}}
+.rr-faith-fx-projectile{font-size:clamp(30px,6vw,58px);line-height:1;filter:drop-shadow(0 4px 5px #000b) drop-shadow(0 0 8px var(--fx-color,#fff));
+ animation:rrFaithProjectile var(--flight-time,680ms) cubic-bezier(.35,.15,.22,1) forwards;}
+@keyframes rrFaithProjectile{0%{transform:translate(-50%,-50%) scale(.5) rotate(-26deg);opacity:0}14%{opacity:1}
+ 50%{transform:translate(calc(-50% + var(--mid-x)),calc(-50% + var(--mid-y))) scale(1.35) rotate(22deg);opacity:1}
+ 96%{opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.75) rotate(48deg);opacity:0}}
+.rr-faith-fx-meteor{font-size:48px;filter:drop-shadow(0 0 14px #ffab3d) drop-shadow(0 3px 6px #000);animation:rrFaithMeteor 550ms cubic-bezier(.7,.05,.8,1) forwards;}
+@keyframes rrFaithMeteor{0%{transform:translate(calc(-50% - 60px),calc(-50% - 240px)) rotate(-40deg) scale(.4);opacity:.1}
+ 30%{opacity:1}100%{transform:translate(-50%,-50%) rotate(12deg) scale(1.2);opacity:0}}
+.rr-faith-fx-banner{--banner-border:#ffd988;--banner-bg:#302a56;max-width:min(78vw,330px);min-width:135px;padding:8px 15px;
+ border:2px solid var(--banner-border);border-radius:12px;text-align:center;font:1000 clamp(11px,2.7vw,15px)/1.2 system-ui,sans-serif;letter-spacing:.035em;
+ color:#fff;background:linear-gradient(135deg,var(--banner-bg),#181e3cd9);box-shadow:0 4px 0 #050b2380,0 5px 18px #000a,0 0 18px var(--banner-border);
+ animation:rrFaithBanner 1.45s ease-out forwards;white-space:normal;}
+@keyframes rrFaithBanner{0%{transform:translate(-50%,-15%) scale(.35);opacity:0}16%{transform:translate(-50%,-95%) scale(1.15);opacity:1}
+ 25%{transform:translate(-50%,-100%) scale(1);opacity:1}79%{transform:translate(-50%,-125%);opacity:1}100%{transform:translate(-50%,-155%);opacity:0}}
+.rr-faith-fx-emoji{font-size:66px;line-height:1;filter:drop-shadow(0 0 12px var(--fx-color,#ffe19b));animation:rrFaithEmote 1.05s ease-out forwards;}
+@keyframes rrFaithEmote{0%{transform:translate(-50%,-50%) rotate(-25deg) scale(.2);opacity:0}28%{transform:translate(-50%,-80%) rotate(10deg) scale(1.22);opacity:1}
+ 58%{transform:translate(-50%,-100%) rotate(-8deg) scale(1);opacity:1}100%{transform:translate(-50%,-145%) scale(.9);opacity:0}}
+.rr-faith-fx-flash{width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,#fffdf9,#ffe39b 16%,#ff723e 43%,transparent 69%);
+ filter:drop-shadow(0 0 18px #ff9e51);mix-blend-mode:screen;animation:rrFaithFlash .53s ease-out forwards;}
+@keyframes rrFaithFlash{0%{transform:translate(-50%,-50%) scale(.1);opacity:.9}45%{transform:translate(-50%,-50%) scale(1.8);opacity:1}100%{transform:translate(-50%,-50%) scale(2.25);opacity:0}}
+.rr-faith-fx-frost{width:90px;height:90px;border:4px dotted #a8f4ff;border-radius:50%;box-shadow:0 0 24px #60dfff,inset 0 0 19px #b8fbff;
+ animation:rrFaithFrost .9s ease-out forwards;}
+@keyframes rrFaithFrost{0%{transform:translate(-50%,-50%) scale(.16) rotate(-60deg);opacity:1}100%{transform:translate(-50%,-50%) scale(1.5) rotate(85deg);opacity:0}}
+.rr-faith-fx-trap{font-size:52px;animation:rrFaithSnap .7s cubic-bezier(.2,.85,.2,1) forwards;}
+@keyframes rrFaithSnap{0%{transform:translate(-50%,-125%) scale(1.7) rotate(-30deg);opacity:.1}40%{transform:translate(-50%,-50%) scale(.8) rotate(13deg);opacity:1}58%{transform:translate(-50%,-50%) scale(1.33) rotate(-10deg)}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
+#rrFaithNotice.rr-faith-notice {border:1px solid #e6b7ff;background:linear-gradient(125deg,#3b285d,#182345);box-shadow:0 12px 33px #0008,0 0 18px #dfb0ff3d;}
+body.fx-enabled #rrFaithNotice.rr-faith-notice:not(.hidden){animation:rrFaithNoticeIn .35s cubic-bezier(.2,1.4,.4,1) both;}
+@keyframes rrFaithNoticeIn{from{opacity:0;transform:translate(-50%,-20px) scale(.87)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+.rr-faith-dialog{position:relative;overflow:hidden;border-color:#f5cf8b;box-shadow:0 30px 90px #000b,0 0 42px #ae7aff47;}
+.rr-faith-dialog::before{content:"";position:absolute;top:0;left:12%;right:12%;height:3px;background:linear-gradient(90deg,transparent,#ffe6a8,transparent);}
+.rr-faith-choice{transition:transform .16s,background .16s,box-shadow .16s;background:linear-gradient(105deg,#61539f,#3d468a);box-shadow:inset 0 1px #ffffff35,0 3px 0 #141633;}
+.rr-faith-choice:hover{transform:translateY(-2px);background:linear-gradient(105deg,#7665b8,#515ba2);box-shadow:inset 0 1px #ffffff50,0 5px 0 #141633;}
+.rr-faith-choice:focus-visible{outline:3px solid #ffe3a3;outline-offset:2px;}
+.rr-prize-overlay .rr-prize-card{position:relative;overflow:hidden;isolation:isolate;}
+.rr-prize-overlay .rr-prize-card::before{content:"";position:absolute;width:250px;height:250px;left:50%;top:-120px;transform:translateX(-50%);background:radial-gradient(circle,#ffe3ae34,transparent 65%);pointer-events:none;z-index:-1;}
+.rr-prize-overlay .rr-prize-reel{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 20%,#5069a1,#272d63 65%,#17152f);box-shadow:inset 0 4px 18px #0006,0 0 25px #a995ff4f;}
+.rr-prize-overlay .rr-prize-reel::before{content:"";position:absolute;inset:-80%;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 30deg,#fce99d19 40deg,transparent 60deg,#b894ff24 100deg,transparent 140deg,#fde8ab1e 180deg,transparent 230deg,#b9b4ff20 290deg,transparent 335deg);pointer-events:none;}
+body.fx-enabled .rr-prize-overlay:not(.hidden) .rr-prize-reel::before{animation:rrFaithReelSpin 5s linear infinite;}
+@keyframes rrFaithReelSpin{to{transform:rotate(360deg)}}
+.rr-prize-overlay.rr-prize-win .rr-prize-reel{background:radial-gradient(circle at 50% 30%,#7468ab,#3e3159 65%,#17152c);}
+body.fx-enabled .rr-prize-overlay.rr-prize-win .rr-prize-reel{animation:rrFaithChestWin .8s ease-out 1;}
+@keyframes rrFaithChestWin{0%{transform:scale(.75);filter:brightness(2)}45%{transform:scale(1.13);filter:brightness(1.2)}100%{transform:scale(1);filter:brightness(1)}}
+@media(max-width:440px){#rrFaithInventory.rr-faith-panel{padding:10px}#rrFaithInventory .rr-faith-tool-row{gap:6px}#rrFaithInventory .rr-faith-tool{gap:5px;padding:7px 5px;min-height:43px}#rrFaithInventory .rr-faith-tool-icon{width:28px;height:28px;font-size:20px}}
+@media(prefers-reduced-motion:reduce){#rrFaithFxLayer{display:none!important}#rrFaithInventory .rr-faith-tool,#rrFaithInventory .rr-faith-tool-icon,#board .rr-faith-hazard,#board .rr-faith-hazard::before,#board .rr-faith-hazard::after,#board .rr-faith-token-aura,.rr-prize-overlay .rr-prize-reel::before{animation:none!important;transition:none!important;}}
+body:not(.fx-enabled) #rrFaithFxLayer{display:none!important}
+body:not(.fx-enabled) #rrFaithInventory .rr-faith-tool-icon,body:not(.fx-enabled) #board .rr-faith-hazard,body:not(.fx-enabled) #board .rr-faith-hazard::before,body:not(.fx-enabled) #board .rr-faith-hazard::after{animation:none!important}
+
+/* Chest reveals are color-coded according to the actual prize. */
+.rr-prize-overlay.rr-prize-win[data-faith-reward="ank_shield"] .rr-prize-reel{border-color:#ffe39b;background:radial-gradient(circle,#8b7440,#353050 65%,#191c38);box-shadow:0 0 35px #ffd36b9c,inset 0 0 25px #ffe7b43d;}
+.rr-prize-overlay.rr-prize-win[data-faith-reward="mana_power"] .rr-prize-reel{border-color:#d5acff;background:radial-gradient(circle,#765da7,#3f2a68 64%,#17142d);box-shadow:0 0 38px #c589ff98,inset 0 0 22px #f6d4ff33;}
+.rr-prize-overlay.rr-prize-win[data-faith-reward="snowball"] .rr-prize-reel{border-color:#b2f5ff;background:radial-gradient(circle,#5cbfc8,#31557f 65%,#191a40);box-shadow:0 0 35px #83edff99;}
+.rr-prize-overlay.rr-prize-win[data-faith-reward="lava_flask"] .rr-prize-reel{border-color:#ffc17a;background:radial-gradient(circle,#ae612e,#60304a 65%,#211930);box-shadow:0 0 35px #ff873d99;}
+.rr-prize-overlay.rr-prize-win[data-faith-reward="air_strike"] .rr-prize-reel{border-color:#ffbc90;box-shadow:0 0 35px #ff8c6199;}
+.rr-prize-overlay.rr-prize-win[data-faith-reward="bear_trap"] .rr-prize-reel{border-color:#c9e0f6;box-shadow:0 0 35px #a6c5e48f;}
+
+
+/* --- Original stylesheet: inline-style-2 --- */
+/* Chest of Faith + hero powers visual upgrade: all-original SVG artwork. */
+.rr-art-icon{--ic-a:#e2d7ee;--ic-b:#66528d;display:inline-flex;position:relative;align-items:center;justify-content:center;flex:none;width:34px;height:34px;border:1px solid rgba(255,255,255,.52);border-radius:11px;vertical-align:middle;
+ background:radial-gradient(circle at 27% 15%,rgba(255,255,255,.46),transparent 40%),linear-gradient(145deg,var(--ic-a),var(--ic-b));
+ box-shadow:inset 0 1.5px 1px rgba(255,255,255,.42),inset 0 -3px 5px rgba(0,0,0,.24),0 3px 9px rgba(0,0,0,.27);overflow:hidden;}
+.rr-art-icon:after{content:"";pointer-events:none;position:absolute;left:16%;right:16%;top:6%;height:25%;border-radius:50%;background:linear-gradient(#fff8,transparent);transform:rotate(-13deg)}
+.rr-art-icon svg{width:82%;height:82%;display:block;overflow:visible;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5;fill:none;filter:drop-shadow(0 1.8px 1px rgba(19,19,50,.52))}
+.rr-art-icon[data-icon="ank_shield"]{--ic-a:#be8b2e;--ic-b:#5c397a;}
+.rr-art-icon[data-icon="mana_power"]{--ic-a:#bc73ed;--ic-b:#45338d;}
+.rr-art-icon[data-icon="bear_trap"]{--ic-a:#c4a05f;--ic-b:#614137;}
+.rr-art-icon[data-icon="air_strike"]{--ic-a:#f87944;--ic-b:#743260;}
+.rr-art-icon[data-icon="snowball"]{--ic-a:#6edcf5;--ic-b:#2862a1;}
+.rr-art-icon[data-icon="lava_flask"]{--ic-a:#f7a34c;--ic-b:#a43d3b;}
+.rr-art-icon[data-icon="boots"]{--ic-a:#70e7ba;--ic-b:#37729c;}
+.rr-art-icon[data-icon="reflect"]{--ic-a:#d5d9fc;--ic-b:#6375bc;}
+.rr-art-icon[data-icon="freeze"]{--ic-a:#6af3f5;--ic-b:#5475ad;}
+.rr-art-icon[data-icon="lucky"]{--ic-a:#f5cb52;--ic-b:#9951a5;}
+.rr-art-icon[data-icon="trail"]{--ic-a:#82e4ac;--ic-b:#235e85;}
+.rr-art-icon[data-icon="gravity"]{--ic-a:#ad94ff;--ic-b:#42448f;}
+.rr-art-icon[data-icon="fireball"]{--ic-a:#ffaf55;--ic-b:#ba3c49;}
+.rr-art-icon[data-icon="lasso"]{--ic-a:#f0c37c;--ic-b:#8c5854;}
+.rr-art-icon[data-icon="shadowstep"]{--ic-a:#80b8eb;--ic-b:#534c9c;}
+.rr-art-icon[data-icon="scout"]{--ic-a:#a5e4aa;--ic-b:#427c87;}
+.rr-art-icon[data-icon="zero-g"]{--ic-a:#a7cfff;--ic-b:#5c5a9d;}
+.rr-art-icon[data-icon="scales"]{--ic-a:#a5d98d;--ic-b:#407d66;}
+.rr-art-icon[data-icon="quick-draw"]{--ic-a:#f4ca66;--ic-b:#af6348;}
+.rr-art-icon[data-icon="smoke-veil"]{--ic-a:#b0c1ea;--ic-b:#586080;}
+#rrAbilityPanel .rr-power-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;font-size:0;line-height:1;}
+#rrAbilityPanel .rr-power-icon .rr-art-icon{width:37px;height:37px;border-radius:12px}
+#rrAbilityPanel .rr-item-button{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap}
+#rrAbilityPanel .rr-item-button .rr-art-icon{width:29px;height:29px;border-radius:9px}
+#rrFaithInventory .rr-faith-tool-icon{width:38px;height:38px;background:none;border:0;filter:none;overflow:visible}
+#rrFaithInventory .rr-faith-tool-icon .rr-art-icon{width:38px;height:38px}
+#rrFaithInventory .rr-faith-tool{display:flex;align-items:center;gap:7px;padding:6px 8px;min-height:45px}
+.rr-prize-wheel-glyph .rr-art-icon{width:88px;height:88px;border-radius:22px;margin:auto;box-shadow:0 9px 28px #0005,0 0 22px #d7bc7799,inset 0 2px 3px #fffb}
+.rr-prize-win .rr-prize-wheel-glyph .rr-art-icon{box-shadow:0 8px 25px #0006,0 0 30px #fff4bfaa}
+.rr-faith-fx-emoji .rr-art-icon,.rr-faith-fx-projectile .rr-art-icon,.rr-faith-fx-trap .rr-art-icon{width:45px;height:45px;filter:drop-shadow(0 7px 7px #0006)}
+#board .rr-faith-hazard .rr-art-icon{width:100%;height:100%;border-radius:6px;box-shadow:0 2px 3px #0006}
+#board .rr-faith-lava_flask .rr-art-icon{opacity:.92}
+/* Keep wheel at top of action panel on narrow screens. */
+@media(max-width:950px){html body.in-game #gameScreen .sidebar > .game-panel:first-child .roll-row{order:0!important}}
+
+
+/* --- Original stylesheet: inline-style-2 --- */
+/* Mobile-specific layout system. Original desktop board and game logic remain unchanged. */
+#rrMobileDock,#rrGameMore{display:none}
+@media(max-width:680px){
+ html,body{max-width:100%;overflow-x:clip}
+ body.in-game .app{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))!important}
+ body.in-game #gameScreen{scroll-margin-top:65px}
+ body.in-game #gameScreen .screen-title{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;flex-wrap:nowrap!important;margin:3px 0 8px!important;min-height:42px!important}
+ body.in-game #gameScreen .screen-title>div:first-child{flex:1;min-width:0}
+ body.in-game #gameScreen .screen-title h1{font-size:clamp(20px,5.9vw,25px)!important;line-height:1.1!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+ body.in-game #gameScreen .screen-title>div:last-child{display:flex!important;flex-shrink:0;min-width:0}
+ body.in-game #rrGameMore{display:block;position:relative;z-index:101}
+ body.in-game #rrGameMore summary{list-style:none;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:center;gap:5px;color:#f6f9ff;background:linear-gradient(135deg,#345d94,#203a62);border:1px solid #a0c7ff70;border-radius:11px;min-height:42px;min-width:77px;padding:8px 10px;font-weight:850;font-size:12px;box-shadow:0 3px 0 #122844}
+ body.in-game #rrGameMore summary::-webkit-details-marker{display:none}
+ body.in-game #rrGameMore[open] summary{border-color:#ffe4a1;box-shadow:0 0 0 2px #ffe49a33}
+ body.in-game #rrGameMore .rr-game-more-popover{position:absolute;right:0;top:calc(100% + 9px);display:flex;flex-direction:column;gap:7px;padding:10px;width:176px;border:1px solid #97c8fa;background:linear-gradient(150deg,#243f68,#101e37);border-radius:13px;box-shadow:0 15px 38px #000a}
+ body.in-game #rrGameMore .rr-game-more-popover .btn{display:block!important;width:100%!important;font-size:12px!important;min-height:44px!important;text-align:left!important;white-space:normal!important}
+ body.in-game #gameScreen .game-layout{gap:10px!important;max-width:100%!important}
+ body.in-game #gameScreen .sidebar>.game-panel:first-child{padding:11px 11px 12px!important;border:1px solid #6997cc8c!important;border-radius:17px!important;box-shadow:0 8px 25px #0005!important}
+ body.in-game #gameScreen .turn-ribbon{border-radius:12px!important;padding:6px 8px!important;min-height:48px!important;margin:0 0 7px!important}
+ body.in-game #gameScreen #rrMobileInfoButton{font-size:11px!important;min-height:37px!important;padding:6px 10px!important;white-space:nowrap!important}
+ body.in-game #gameScreen .rr-pe-wheel-heading{margin:6px 0!important;letter-spacing:.075em!important;font-size:10px!important;line-height:1.2!important}
+ body.in-game #gameScreen .rr-pe-wheel-caption{display:none!important}
+ body.in-game #gameScreen .roll-row{margin:4px 0 8px!important;max-width:100%!important;min-width:0!important}
+ body.in-game #gameScreen .roll-row #rollBtn{min-height:48px!important;font-weight:900!important}
+ body.in-game #gameScreen .game-layout>.board-card{border-radius:16px!important;min-width:0!important;width:100%!important;overflow:visible!important;padding:8px!important;scroll-margin-top:75px}
+ body.in-game #gameScreen .board-heading{margin-bottom:7px!important;gap:7px!important;align-items:center!important}
+ body.in-game #gameScreen .board-heading>.temple-heading{min-width:0!important;flex:1!important}
+ body.in-game #gameScreen .board-heading .temple-overline{display:none!important}
+ body.in-game #gameScreen .board-heading h2{font-size:clamp(15px,4.5vw,20px)!important;line-height:1.2!important}
+ body.in-game #gameScreen #boardDescription{display:none!important}
+ body.in-game #gameScreen .board-heading #boardId,body.in-game #gameScreen .board-heading #finishBadge,body.in-game #gameScreen .board-heading #boardThemeBadge{display:none!important}
+ body.in-game #gameScreen .board-heading .map-switch-label{max-width:150px!important;min-width:0!important;font-size:10px!important}
+ body.in-game #gameScreen .board-heading .map-switch-label select{max-width:140px!important;min-width:0!important;font-size:10px!important;padding:5px!important}
+ body.in-game #gameScreen #board{max-width:100%!important;margin-inline:auto!important}
+ body.in-game #gameScreen #tileInfo{font-size:11px!important;line-height:1.4!important}
+ body.in-game #gameScreen .path-guide{gap:6px!important;padding:5px 6px!important;flex-wrap:wrap!important}
+ body.in-game #gameScreen .path-guide #boardFitToggle{min-height:34px!important}
+ body.in-game #gameScreen .jump-guide{margin-top:6px!important}
+ body.in-game #gameScreen #challenge{border-radius:16px!important;padding:12px!important;min-width:0!important;overflow-x:hidden!important;scroll-margin-top:70px}
+ body.in-game #gameScreen #challenge .question{overflow-wrap:anywhere!important}
+ body.in-game #gameScreen #challenge .answer{min-width:0!important;min-height:51px!important;white-space:normal!important;overflow-wrap:anywhere!important}
+ body.in-game #gameScreen #rrAnswerRecap{max-width:100%!important;overflow-wrap:anywhere!important}
+ body.in-game #gameScreen .game-footer{display:none!important}
+ body.in-game #gameScreen .activity-panel{display:none!important}
+ body.in-game #rrMobileDock{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;position:fixed;left:0;right:0;bottom:0;z-index:700;padding:7px max(9px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(9px,env(safe-area-inset-left,0px));background:linear-gradient(0deg,#0a1732 0%,#152a50 100%);box-shadow:0 -7px 30px #0008;border-top:1px solid #88b2e568;min-height:62px}
+ body.in-game #rrMobileDock .rr-dock-btn{border:1px solid #587db5;background:linear-gradient(160deg,#203c66,#172c4c);color:#c8d9f1;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:44px;cursor:pointer;font-weight:800;font-size:12px;line-height:1.1;font-family:inherit;touch-action:manipulation}
+ body.in-game #rrMobileDock .rr-dock-btn[aria-current="page"]{background:linear-gradient(125deg,#3566a0,#57459e);border-color:#e5caff;color:#fff;box-shadow:inset 0 1px #fff6,0 0 10px #a9a2f83f}
+ body.in-game #rrMobileDock .rr-dock-btn:focus-visible{outline:3px solid #ffe49a;outline-offset:-3px}
+ body.in-game #rrMobileDock .rr-dock-btn .rr-art-icon{width:25px!important;height:25px!important;border-radius:8px!important}
+ body.in-game.quiz-in-progress #rrMobileDock,body.in-game:has(#gameScreen.rr-math-focus) #rrMobileDock{display:none!important}
+ #rrMobileRaceDialog{width:min(440px,calc(100vw - 16px))!important;max-height:calc(100dvh - 20px)!important;overflow-y:auto!important}
+ .rr-ability-overlay,.rr-faith-overlay{padding:8px!important}
+ .rr-ability-dialog,.rr-faith-dialog{width:min(100%,500px)!important;max-height:calc(100dvh - 16px)!important;overflow-y:auto!important;padding:14px!important;border-radius:15px!important}
+ .rr-ability-choice,.rr-faith-choice{min-height:48px!important;touch-action:manipulation}
+}
+@media(max-width:350px){
+ body.in-game #rrMobileDock .rr-dock-btn{font-size:11px!important;gap:4px!important}
+ body.in-game #rrGameMore summary{min-width:60px!important;padding-inline:6px!important}
+ body.in-game #gameScreen .screen-title h1{font-size:19px!important}
+ body.in-game #gameScreen #challenge .answers{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #rrMobileDock *{animation:none!important;transition:none!important}
+}
+
+
+/* --- Original stylesheet: rr-paper-math-typography --- */
+/* Math is typeset locally: no fonts, libraries, or internet access needed. */
+    #gameScreen #challenge .question, #gameScreen #challenge .answer,
+    #solutionReveal, .rr-recap-heading, #rrMobileChallengeOverlay #question,
+    #rrMobileChallengeOverlay .answer { font-variant-numeric: lining-nums; }
+    .rr-math-power { font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+      font-size: .76em !important; line-height: 1; font-weight: 650;
+      vertical-align: super; position: relative; top: -.12em;
+      display: inline-block; white-space: nowrap; margin-left: .02em; }
+    .rr-math-frac { display: inline-flex; flex-direction: column; align-items: stretch;
+      justify-content: center; text-align: center; font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+      line-height: 1.1; font-weight: 650; font-size: .91em; vertical-align: -.37em;
+      white-space: nowrap; padding: 0 .10em; margin: .04em .04em; }
+    .rr-math-num { display: block; padding: 0 .16em .07em; border-bottom: 1.5px solid currentColor; }
+    .rr-math-den { display: block; padding: .07em .16em 0; }
+    .rr-math-power .rr-math-frac { font-size: .92em; vertical-align: -.32em; margin: 0 .03em; }
+    .rr-math-power .rr-math-num { border-bottom-width: 1.2px; }
+    .rr-math-root { display: inline-flex; align-items: flex-start; vertical-align: -.12em;
+      white-space: nowrap; font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+      font-weight: 650; line-height: 1.12; margin: 0 .055em; }
+    .rr-math-root-sign { font-size: 1.28em; line-height: .96; position: relative;
+      margin-right: -.01em; display: inline-block; padding-top: .01em; }
+    .rr-math-root-index { position: absolute; top: -.32em; left: -.34em;
+      font-size: .39em; line-height: 1; }
+    .rr-math-radicand { display: inline-block; border-top: 1.5px solid currentColor;
+      line-height: 1.13; padding: .05em .045em 0 .035em; }
+    #gameScreen #challenge .question, #gameScreen #challenge .answer,
+    #gameScreen #challenge #feedback, #solutionReveal, .rr-math-steps li { overflow-wrap: break-word; }
+    #gameScreen #challenge .answer { min-height: 48px; line-height: 1.55; }
+    #solutionReveal p, .rr-math-steps li { line-height: 1.6; }
+    @media (max-width: 760px) {
+      #gameScreen #challenge .answer { min-height: 44px; }
+      .rr-math-frac { font-size: .88em; }
+      .rr-math-power { font-size: .73em !important; }
+    }
+
+
+/* --- Original stylesheet: rr-windowed-portal-mystery-card-fix --- */
+/* Windowed laptop: keep the real portal card and math choices at natural size.
+   The right rail, rather than its nested mystery card, is the scroll container. */
+@media (min-width:761px) {
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen .game-layout > #rrGameSidebar {
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:0 !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior-y:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#6e9dc2 #142740;
+    -webkit-overflow-scrolling:touch;
+    align-items:stretch !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen .game-layout > #rrGameSidebar > .game-panel:first-child,
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen.rr-math-focus #rrGameSidebar > .game-panel:first-child,
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen.rr-finish-focus #rrGameSidebar > .game-panel:first-child {
+    flex:0 0 auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen.rr-math-focus #challenge,
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen.rr-finish-focus #challenge {
+    flex:0 0 auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+    scroll-margin-top:10px;
+    scroll-margin-bottom:12px;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen #challenge .rr-portal-fate:not(.hidden) {
+    display:block !important;
+    flex:0 0 auto !important;
+    height:auto !important;
+    min-height:max-content !important;
+    max-height:none !important;
+    overflow:hidden !important;
+    align-self:stretch !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen #challenge .rr-card-stage,
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen #challenge .rr-mystery-card {
+    flex-shrink:0 !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen.rr-math-focus #challenge .answers,
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen.rr-math-focus #challenge .answer {
+    flex-shrink:0 !important;
+  }
+}
+/* Hide only the visible match-history widget outside fullscreen.
+   Game log, score history and exported match report are untouched. */
+html body.in-game:not(.rr-actual-fullscreen) #gameScreen #rrGameSidebar #activityPanel {
+  display:none !important;
+}
+/* Fullscreen laptop retains its match-history panel, within its scrollable rail. */
+@media (min-width:761px) and (min-height:601px) {
+  html body.in-game.rr-actual-fullscreen #gameScreen .game-layout #rrGameSidebar > #activityPanel {
+    display:block !important;
+    flex:0 0 auto !important;
+    height:auto !important;
+    max-height:none !important;
+  }
+}
+
+/* ===============================================================
+   RADICAL RUSH - Quick player turn and answer-result overlays
+   Decorations only; pointer events pass through to active gameplay.
+   =============================================================== */
+#turnSpotlight.turn-spotlight {
+  z-index: 2147482500;
+  pointer-events: none !important;
+  background: radial-gradient(ellipse at 50% 46%, rgba(var(--active-rgb),.43) 0%, rgba(5,12,31,.72) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: rrTurnBackdropIn .23s ease-out both;
+}
+#turnSpotlight .turn-spotlight-card {
+  position: relative;
+  width: min(560px, calc(100vw - 38px));
+  min-width: 0;
+  max-width: calc(100vw - 38px);
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px,3vw,22px);
+  padding: clamp(18px,4vw,30px);
+  border: 2px solid rgba(255,255,255,.88);
+  border-radius: 28px;
+  background: linear-gradient(120deg, rgba(var(--active-rgb),.94), rgba(9,20,45,.97) 72%);
+  box-shadow: 0 24px 80px rgba(1,6,23,.6), 0 0 0 7px rgba(255,255,255,.1), 0 0 70px rgba(var(--active-rgb),.36);
+  isolation: isolate;
+  overflow: hidden;
+  animation: rrTurnCardPop .42s cubic-bezier(.18,1.2,.34,1) both;
+}
+#turnSpotlight .turn-spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: -90% auto -90% -90%;
+  width: 35%;
+  transform: rotate(22deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+  animation: rrTurnSweep .8s .12s ease-out both;
+  pointer-events:none;
+}
+#turnSpotlight .spotlight-avatar {
+  flex: 0 0 clamp(74px, 17vw, 105px);
+  width: clamp(74px, 17vw, 105px);
+  height: clamp(74px, 17vw, 105px);
+  aspect-ratio: 1;
+  border-radius: 24px;
+}
+#turnSpotlight .spotlight-avatar .hero-art-sprite {
+  width: 94% !important;
+  height: 94% !important;
+  object-fit: contain !important;
+}
+#turnSpotlight .spotlight-info span { font-size: clamp(11px,2.1vw,14px); letter-spacing:.16em; }
+#turnSpotlight .spotlight-info strong { font-size: clamp(24px,5.2vw,45px); line-height:1.03; text-wrap: balance; }
+#turnSpotlight.turn-spotlight.exit { animation: rrQuickSplashOut .22s ease-in both; }
+@keyframes rrTurnBackdropIn { from { opacity:0; } to { opacity:1; } }
+@keyframes rrTurnCardPop { from {opacity:0;transform:translateY(25px) scale(.83);} to {opacity:1;transform:translateY(0) scale(1);} }
+@keyframes rrTurnSweep { from {left:-55%;opacity:0;} 30% {opacity:1;} to {left:135%;opacity:0;} }
+@keyframes rrQuickSplashOut { from{opacity:1;} to{opacity:0;} }
+
+.rr-result-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 18px !important;
+  box-sizing: border-box;
+  display: grid !important;
+  place-items: center;
+  z-index: 2147483000 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  background: radial-gradient(ellipse at center, var(--rr-result-glow), rgba(3,12,31,.57) 75%);
+  animation: rrResultBackdrop .19s ease-out both;
+}
+.rr-result-overlay.rr-is-correct { --rr-result-glow:rgba(10,152,100,.60); --rr-result-color:#78ffd1; --rr-result-ring:rgba(110,255,206,.55); }
+.rr-result-overlay.rr-is-wrong { --rr-result-glow:rgba(192,37,72,.52); --rr-result-color:#ffb7c1; --rr-result-ring:rgba(255,130,155,.55); }
+.rr-result-overlay::before, .rr-result-overlay::after {
+  content: ''; position: absolute; left:50%;top:50%; border-radius:50%; pointer-events:none;
+  border: 4px solid var(--rr-result-ring); aspect-ratio:1; width:min(65vw, 450px);
+  transform:translate(-50%,-50%) scale(.4); opacity:0;
+  animation: rrResultRing .72s ease-out .08s both;
+}
+.rr-result-overlay::after { animation-delay:.19s; border-width:2px; }
+.rr-result-inner {
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:5px;width:min(470px,95vw);padding:22px 14px;
+  text-align:center;
+  filter:drop-shadow(0 10px 25px rgba(0,0,0,.38));
+  animation:rrResultPop .32s cubic-bezier(.22,1.3,.32,1) both;
+}
+.rr-result-symbol {
+  display:grid;place-items:center;
+  width:clamp(78px,14vmin,118px);height:clamp(78px,14vmin,118px);
+  border-radius:50%; border:4px solid #fff;
+  font-size:clamp(48px,9vmin,74px);font-weight:950;line-height:1;
+  color:#112d2d;background:var(--rr-result-color);
+  box-shadow:0 0 0 8px rgba(255,255,255,.12),0 14px 38px rgba(1,7,20,.4);
+}
+.rr-result-title {
+  color:#fff;font-size:clamp(35px,8vw,66px);font-weight:1000;
+  line-height:1.04;letter-spacing:.025em;text-transform:uppercase;
+  text-shadow:0 3px 1px rgba(0,0,0,.2),0 10px 28px rgba(0,0,0,.42);
+}
+.rr-result-subtitle {color:#fff;font-size:clamp(14px,3.8vw,20px);font-weight:750;text-shadow:0 2px 9px rgba(0,0,0,.7);}
+.rr-result-overlay.rr-splash-out {animation: rrQuickSplashOut .19s ease-in both;}
+@keyframes rrResultBackdrop {from{opacity:0;}to{opacity:1;}}
+@keyframes rrResultPop {from{opacity:0;transform:translateY(30px) scale(.67);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes rrResultRing {0%{opacity:.68;transform:translate(-50%,-50%) scale(.42);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.42);}}
+@media (max-width:600px) {
+  #turnSpotlight .turn-spotlight-card {padding:18px 16px;border-radius:22px;}
+  .rr-result-overlay {padding:12px !important;}
+  .rr-result-inner {gap:7px;}
+}
+/* Respect the game's own Motion toggle as well as OS reduced-motion. */
+.rr-result-overlay.rr-no-motion, .rr-result-overlay.rr-no-motion::before,
+.rr-result-overlay.rr-no-motion::after, .rr-result-overlay.rr-no-motion .rr-result-inner {
+  animation:none !important;
+}
+.rr-result-overlay.rr-no-motion::before, .rr-result-overlay.rr-no-motion::after {display:none;}
+.rr-result-overlay.rr-no-motion.rr-splash-out {opacity:0;}
+@media (prefers-reduced-motion: reduce) {
+  .rr-result-overlay, .rr-result-overlay::before, .rr-result-overlay::after,
+  .rr-result-inner, #turnSpotlight.turn-spotlight,
+  #turnSpotlight .turn-spotlight-card, #turnSpotlight .turn-spotlight-card::after {
+    animation: none !important;
+  }
+  .rr-result-overlay::before, .rr-result-overlay::after {display:none;}
+  .rr-result-overlay.rr-splash-out {opacity:0;}
+}
+
+
+/* ===== Turn spotlight & reusable scratch-paper workspace ===== */
+#turnSpotlight.turn-spotlight {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  display: grid !important;
+  place-items: center;
+  visibility: visible !important;
+  z-index: 2147482500 !important;
+  pointer-events: none !important;
+}
+#turnSpotlight.rr-turn-static,
+#turnSpotlight.rr-turn-static .turn-spotlight-card,
+#turnSpotlight.rr-turn-static .turn-spotlight-card::after {
+  animation: none !important;
+}
+#turnSpotlight.rr-turn-static.exit {opacity:0;transition:opacity .2s ease;}
+@media (prefers-reduced-motion: reduce) {
+  #turnSpotlight.turn-spotlight {display:grid !important;animation:none !important;}
+  #turnSpotlight .turn-spotlight-card, #turnSpotlight .turn-spotlight-card::after {animation:none !important;}
+  #turnSpotlight.exit {opacity:0;}
+}
+
+
+/* --- Original stylesheet: inline-style-2 --- */
+/* Chest of Faith - original SVG board props sized by tile, not viewport. */
+#board .rr-faith-hazard.rr-faith-bear_trap,
+#board .rr-faith-hazard.rr-faith-lava_flask {
+  position:absolute!important;display:block!important;box-sizing:border-box!important;
+  min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;
+  border:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;
+  overflow:visible!important;opacity:1!important;filter:none!important;
+  pointer-events:none!important;transform:none!important;isolation:isolate;
+}
+#board .rr-faith-hazard.rr-faith-bear_trap {
+  left:12%!important;right:auto!important;top:18%!important;bottom:auto!important;width:76%!important;height:72%!important;
+}
+#board .rr-faith-hazard.rr-faith-lava_flask {
+  left:5%!important;right:auto!important;top:auto!important;bottom:4%!important;width:90%!important;height:66%!important;
+}
+#board .rr-faith-hazard.rr-faith-bear_trap::before,
+#board .rr-faith-hazard.rr-faith-bear_trap::after,
+#board .rr-faith-hazard.rr-faith-lava_flask::before,
+#board .rr-faith-hazard.rr-faith-lava_flask::after {content:none!important;display:none!important;animation:none!important;}
+#board .rr-faith-hazard .rr-viz-hazard{width:100%!important;height:100%!important;max-height:none!important;max-width:none!important;display:block!important;overflow:visible!important;filter:drop-shadow(0 2px 2px #0b1826ad);border:0!important;background:none!important;box-shadow:none!important;}
+.rr-viz-bear .rr-viz-jaw-top {transform-box:fill-box;transform-origin:50% 94%;}
+.rr-viz-bear .rr-viz-jaw-bottom {transform-box:fill-box;transform-origin:50% 10%;}
+body.fx-enabled .rr-viz-bear .rr-viz-jaw-top {animation:rrVizJawTop 2.15s ease-in-out infinite;}
+body.fx-enabled .rr-viz-bear .rr-viz-jaw-bottom {animation:rrVizJawBottom 2.15s ease-in-out infinite;}
+body.fx-enabled .rr-viz-bear .rr-viz-coil {animation:rrVizCoil 2.15s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+@keyframes rrVizJawTop{0%,15%,80%,100%{transform:translateY(-5px) rotate(-5deg)}21%,28%{transform:translateY(5px) rotate(1deg)}39%,62%{transform:translateY(-5px) rotate(-5deg)}}
+@keyframes rrVizJawBottom{0%,15%,80%,100%{transform:translateY(4px) rotate(4deg)}21%,28%{transform:translateY(-3px) rotate(-2deg)}39%,62%{transform:translateY(4px) rotate(4deg)}}
+@keyframes rrVizCoil{0%,100%{transform:scale(1)}22%,28%{transform:scale(.79)}42%{transform:scale(1.1)}}
+body.fx-enabled .rr-viz-lava .rr-viz-lava-core {animation:rrVizMolten 2.4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center;}
+body.fx-enabled .rr-viz-lava .rr-viz-bubble {animation:rrVizBubble 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+body.fx-enabled .rr-viz-lava .rr-viz-bubble:nth-of-type(2n){animation-delay:-.8s}
+body.fx-enabled .rr-viz-lava .rr-viz-ripple {animation:rrVizRipple 2.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+@keyframes rrVizMolten{0%{transform:scale(.96) rotate(-1deg);filter:brightness(.96)}100%{transform:scale(1.035) rotate(1deg);filter:brightness(1.18)}}
+@keyframes rrVizBubble{0%,100%{opacity:.45;transform:translateY(1px) scale(.65)}45%{opacity:1;transform:translateY(-6px) scale(1.25)}75%{opacity:.2;transform:translateY(-10px) scale(.8)}}
+@keyframes rrVizRipple{0%{opacity:.4;transform:scale(.98)}50%{opacity:1;transform:scale(1.03)}100%{opacity:.4;transform:scale(.98)}}
+#rrFaithInventory .rr-faith-tool-icon .rr-viz-inventory{width:38px!important;height:38px!important;display:block;overflow:visible;filter:drop-shadow(0 3px 3px #09162b99)}
+/* Air strike VFX is separately layered, so it also displays in Element Fullscreen. */
+#rrToolFxStage{position:fixed;inset:0;z-index:12070;pointer-events:none;overflow:hidden;contain:layout style;}
+.rr-strike-phase{position:absolute;left:0;top:0;width:var(--strike-size,105px);height:var(--strike-size,105px);transform:translate(-50%,-50%);overflow:visible;pointer-events:none;will-change:transform,opacity;}
+.rr-strike-crosshair {position:absolute;inset:2%;width:96%;height:96%;overflow:visible;filter:drop-shadow(0 0 6px #ffce56);animation:rrStrikeLock 480ms ease-out both;}
+.rr-strike-lock-label{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font:bold 9px/1.1 system-ui,sans-serif;letter-spacing:.12em;color:#fff0a5;text-shadow:0 1px 3px #000,0 0 4px #e9732f;animation:rrStrikeLock 480ms both;}
+@keyframes rrStrikeLock{0%{opacity:0;transform:scale(1.6) rotate(-13deg)}23%,65%{opacity:1;transform:scale(1) rotate(0)}100%{opacity:0;transform:scale(.85)}}
+.rr-strike-aircraft{position:absolute;left:50%;top:50%;width:130%;height:105%;overflow:visible;filter:drop-shadow(0 3px 4px #13192c) drop-shadow(0 0 6px #ffdf92);animation:rrStrikeFly 710ms cubic-bezier(.12,.31,.5,1) 140ms both;}
+@keyframes rrStrikeFly{0%{opacity:0;transform:translate(-130%,-125%) rotate(-11deg) scale(.65)}15%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(50%,5%) rotate(15deg) scale(1.07)}}
+.rr-strike-bomb{position:absolute;left:48%;top:36%;width:38%;height:45%;overflow:visible;filter:drop-shadow(0 1px 5px #ff8b35);animation:rrStrikeBomb 390ms cubic-bezier(.4,.02,.84,1) 310ms both;}
+@keyframes rrStrikeBomb{0%{opacity:0;transform:translate(-5px,-68px) scale(.45) rotate(-18deg)}10%{opacity:1}100%{opacity:0;transform:translate(12px,25px) scale(1.2) rotate(18deg)}}
+.rr-strike-explosion{position:absolute;inset:-18%;border-radius:50%;opacity:0;background:radial-gradient(circle,#fffbe9 0 10%,#ffef9d 21%,#ffb348 42%,#ef5926 62%,#a52d34ad 76%,transparent 83%);filter:drop-shadow(0 0 10px #ffad40);animation:rrStrikeBlast 880ms cubic-bezier(.16,.7,.31,1) 430ms both;}
+.rr-strike-ring{position:absolute;inset:2%;border:7px solid #ffe594;border-radius:50%;box-shadow:0 0 14px #ff602f,inset 0 0 10px #ffaf36;opacity:0;animation:rrStrikeRing 700ms ease-out 455ms both;}
+.rr-strike-spark{position:absolute;left:50%;top:50%;height:7%;width:7%;background:#ffe0a3;box-shadow:0 0 9px #ff8d24;clip-path:polygon(50% 0,70% 36%,100% 50%,70% 62%,50% 100%,30% 60%,0 50%,30% 35%);animation:rrStrikeSpark 730ms ease-out 455ms both;}
+@keyframes rrStrikeBlast{0%{opacity:.1;transform:scale(.1)}26%{opacity:1;transform:scale(.85)}55%{opacity:1;transform:scale(1.2)}100%{opacity:0;transform:scale(1.9)}}
+@keyframes rrStrikeRing{0%{opacity:1;transform:scale(.15)}45%{opacity:1}100%{opacity:0;transform:scale(2)}}
+@keyframes rrStrikeSpark{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}25%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--spark-x)),calc(-50% + var(--spark-y))) scale(.35)}}
+.rr-viz-impact-ring{position:absolute;left:50%;top:50%;width:45px;height:45px;transform:translate(-50%,-50%);border:4px solid #ffc27c;border-radius:50%;box-shadow:0 0 13px #ff892e;animation:rrStrikeRing .6s both;}
+@media(max-width:680px){.rr-strike-lock-label{font-size:8px}#rrFaithInventory .rr-faith-tool-icon .rr-viz-inventory{width:30px!important;height:30px!important}}
+@media(prefers-reduced-motion:reduce){.rr-viz-hazard *,.rr-strike-phase *{animation:none!important;transition:none!important}}
+body:not(.fx-enabled) .rr-viz-hazard *,body:not(.fx-enabled) .rr-strike-phase *{animation:none!important;transition:none!important}
+
+
+/* --- Original stylesheet: rr-final-gameplay-layout-fit-2026 --- */
+/* Final gameplay shell: natural-height content; scrolling belongs to the rail.
+   Desktop fullscreen is compact, whereas browser-window gameplay stays scrollable.
+   No elements are deleted and math/chest event handlers are left untouched. */
+@media (min-width:761px) {
+  html body.in-game #gameScreen .game-layout > #rrGameSidebar {
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    gap:8px !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior-y:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:#7aa9d2 #152b48;
+  }
+  html body.in-game #gameScreen #rrGameSidebar > .game-panel:first-child,
+  html body.in-game #gameScreen #rrGameSidebar > #challenge,
+  html body.in-game #gameScreen #rrGameSidebar > #activityPanel {
+    box-sizing:border-box !important;
+    width:100% !important;
+    flex:0 0 auto !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    height:auto !important;
+    max-height:none !important;
+    align-self:stretch !important;
+  }
+  html body.in-game #gameScreen #rrGameSidebar > .game-panel:first-child {
+    display:flex !important;
+    flex-direction:column !important;
+    gap:6px !important;
+    padding:9px !important;
+    overflow:visible !important;
+  }
+  html body.in-game #gameScreen #rrGameSidebar #rrAbilityPanel {
+    height:auto !important;
+    flex:0 0 auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+    padding-bottom:2px !important;
+  }
+  html body.in-game #gameScreen #rrGameSidebar #rrFaithInventory,
+  html body.in-game #gameScreen #rrGameSidebar .roll-row,
+  html body.in-game #gameScreen #rrGameSidebar #turnCountdown:not(.hidden),
+  html body.in-game #gameScreen #rrGameSidebar #rrAnswerRecap {
+    flex-shrink:0 !important;
+    min-width:0 !important;
+    max-height:none !important;
+  }
+  html body.in-game #gameScreen #rrGameSidebar > #challenge:not(.hidden) {
+    overflow:visible !important;
+    scroll-margin-top:8px;
+    scroll-margin-bottom:10px;
+  }
+  /* A question or portal card must never collapse when another panel appears. */
+  html body.in-game #gameScreen #rrGameSidebar #rrPortalFate:not(.hidden),
+  html body.in-game #gameScreen #rrGameSidebar .rr-card-stage,
+  html body.in-game #gameScreen #rrGameSidebar .rr-mystery-card {
+    flex-shrink:0 !important;
+  }
+  /* Keep match history available in fullscreen only. */
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen #rrGameSidebar > #activityPanel {
+    display:none !important;
+  }
+}
+@media (min-width:1100px) {
+  /* Windowed laptop: right panel scrolls even when the browser document is locked
+     by older game rules. The game board stays visible beside it. */
+  html:has(body.in-game:not(.rr-actual-fullscreen)) {
+    height:auto !important;
+    min-height:100% !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) {
+    height:auto !important;
+    min-height:100dvh !important;
+    max-height:none !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) .app,
+  html body.in-game:not(.rr-actual-fullscreen) .app > main,
+  html body.in-game:not(.rr-actual-fullscreen) .app > main > #gameScreen {
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen .game-layout {
+    display:grid !important;
+    grid-template-columns:minmax(0, 58fr) minmax(0, 42fr) !important;
+    align-items:start !important;
+    min-height:0 !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen .game-layout > .board-card {
+    height:auto !important;
+    max-height:none !important;
+    align-self:start !important;
+  }
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen .game-layout > #rrGameSidebar {
+    height:calc(100dvh - 85px) !important;
+    min-height:300px !important;
+    max-height:calc(100dvh - 85px) !important;
+    overflow-y:auto !important;
+  }
+  /* Fullscreen: fit the action console and history inside the available rail.
+     Shorter browser heights still scroll gracefully rather than squash cards. */
+  html body.in-game.rr-actual-fullscreen #gameScreen .game-layout {
+    display:grid !important;
+    grid-template-columns:minmax(0, 55fr) minmax(0, 45fr) !important;
+    min-height:0 !important;
+    max-height:100% !important;
+    overflow:hidden !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen .game-layout > #rrGameSidebar {
+    height:100% !important;
+    max-height:100% !important;
+    overflow-y:auto !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar > #activityPanel {
+    display:block !important;
+  }
+}
+@media (min-width:1100px) and (max-height:900px) {
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar {gap:5px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar > .game-panel:first-child {
+    gap:4px !important;
+    padding:7px !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen #turnRibbon {min-height:46px !important; padding:4px 7px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #turnRibbonIcon {width:34px !important; height:34px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #standings .stand-row {min-height:35px !important; padding:3px 5px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #status {min-height:0 !important; padding:4px 7px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar .roll-row {
+    grid-template-columns:105px minmax(0,1fr) !important;
+    min-height:112px !important;
+    max-height:none !important;
+    height:auto !important;
+    margin:0 !important;
+    padding:6px !important;
+    gap:5px 7px !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar .roll-row .dice-tray {
+    width:100px !important; height:100px !important;
+    min-width:0 !important; min-height:0 !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen #dice.rr-wheel-control {
+    --wheel-size:94px !important;
+    width:94px !important; height:94px !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen #rollBtn {min-height:42px !important; padding:6px 9px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrAbilityPanel .rr-one-active-passive .rr-ability-button {min-height:60px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrAbilityPanel .rr-passive-display {padding:6px 8px !important; gap:6px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrAbilityPanel .rr-passive-label {font-size:11px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrFaithInventory {padding:8px 10px !important; margin-top:4px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrFaithInventory .rr-faith-panel-title {margin-bottom:4px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar #turnCountdown:not(.hidden) {
+    margin:3px 0 0 !important; padding:5px 9px 12px !important;
+    min-height:52px !important; gap:6px !important;
+    flex-wrap:wrap !important;
+  }
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar #turnCountdown strong {font-size:25px !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar > #activityPanel > summary {padding:9px 11px !important;}
+}
+/* Narrow laptop/tablet browser: stack board above console and keep vertical
+   scroll, rather than forcing two unusably thin columns. */
+@media (min-width:761px) and (max-width:1099px) {
+  html:has(body.in-game),
+  html body.in-game,
+  html body.in-game .app,
+  html body.in-game .app > main,
+  html body.in-game .app > main > #gameScreen {
+    height:auto !important;
+    max-height:none !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+  }
+  html body.in-game #gameScreen .game-layout {
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:10px !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  html body.in-game #gameScreen .game-layout > .board-card {
+    order:0 !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  html body.in-game #gameScreen .game-layout > #rrGameSidebar {
+    order:1 !important;
+    display:flex !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    overflow-y:visible !important;
+  }
+  html body.in-game #gameScreen #rrGameSidebar > #activityPanel {display:none !important;}
+  html body.in-game.rr-actual-fullscreen #gameScreen #rrGameSidebar > #activityPanel {display:block !important;}
+  html body.in-game #gameScreen .board-card #board {
+    width:min(100%, 700px) !important;
+    max-width:100% !important;
+    max-height:none !important;
+    height:auto !important;
+  }
+}
+/* Short laptop screens: scrolling is preferable to clipping in either mode. */
+@media (min-width:1100px) and (max-height:600px) {
+  html body.in-game:not(.rr-actual-fullscreen) #gameScreen .game-layout > #rrGameSidebar {
+    height:calc(100dvh - 75px) !important;
+    min-height:220px !important;
+    max-height:calc(100dvh - 75px) !important;
+  }
+}
+/* Mobile portrait and its game dock retain their dedicated original design. */
+
+
+/* --- Original stylesheet: rrMobileParticlePortalStability --- */
+/* Remove decorative ambient overlays on phones/tablets, preserving game visuals. */
+@media (max-width: 760px), (pointer: coarse) {
+  #rrBiomeAtmosphere,
+  #rrArcadeEffectsCanvas,
+  #gameScreen .fx-particle,
+  #gameScreen .rr-faith-fx-particle,
+  #gameScreen #board .rr-portal-spark,
+  #menuScreen .rr-scene-sparkles,
+  #menuScreen .rr-scene-sparkles i {
+    display: none !important;
+    animation: none !important;
+    visibility: hidden !important;
+  }
+  /* Portal markers stay in their assigned tiles instead of floating and resizing. */
+  body.fx-enabled #gameScreen #board .tile-special.rr-crafted.realm-portal .rr-premium-icon,
+  #gameScreen #board .tile-special.rr-crafted.realm-portal .rr-premium-icon,
+  body.fx-enabled #gameScreen .tile.boost .tile-special,
+  body.fx-enabled #gameScreen .tile-special.realm-portal img,
+  body.fx-enabled #gameScreen .tile-special .portal-arch {
+    animation: none !important;
+    transition: none !important;
+  }
+  #gameScreen #board .tile-special.rr-crafted.realm-portal .rr-premium-icon {
+    transform: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+  /* No layout movement when the mystery card is flipped/revealed. */
+  #gameScreen .rr-portal-fate { flex: 0 0 auto !important; min-height: 0 !important; }
+  #gameScreen .rr-portal-fate .rr-card-stage { flex: 0 0 auto !important; min-height: var(--card-h) !important; }
+  #gameScreen .rr-portal-fate .rr-mystery-card {
+    transition: filter .2s ease !important;
+    flex-shrink: 0 !important;
+  }
+  /* Keep the essential reveal flip: it changes the card face, not its position. */
+  #gameScreen .rr-portal-fate .rr-card-inner { transform-origin: center center !important; }
+}
+@media (max-width: 760px) and (orientation: portrait),
+       (pointer: coarse) and (orientation: portrait) {
+  #gameScreen .rr-portal-fate,
+  #gameScreen .rr-portal-fate.rr-card-compact {
+    --card-w: min(146px, 41vw) !important;
+    --card-h: min(194px, 53vw) !important;
+  }
+  #gameScreen #rrMobileChallengeOverlay .rr-portal-fate .rr-card-stage {
+    height: var(--card-h) !important;
+    max-height: none !important;
+  }
+  #gameScreen #rrMobileChallengeOverlay .rr-portal-fate {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 600px),
+       (max-width: 1100px) and (orientation: landscape) and (max-height: 450px) {
+  #gameScreen .rr-portal-fate,
+  #gameScreen .rr-portal-fate.rr-card-compact {
+    --card-w: 92px !important;
+    --card-h: 114px !important;
+  }
+  #gameScreen #rrMobileChallengeOverlay .rr-portal-fate .rr-card-stage {
+    height: 114px !important;
+  }
+}
+
+
+/* --- Original stylesheet: rrVisualGuideStyles --- */
+/* Illustrated beginner's guide. Scoped to rulesScreen so gameplay UI is unaffected. */
+#rulesScreen{max-width:1220px;margin-inline:auto;padding-bottom:25px;overflow:visible;scroll-margin-top:16px}
+#rulesScreen .rr-guide-topline{margin-bottom:18px}
+#rulesScreen .rr-guide{--g-ink:#f5f6ff;--g-muted:#c0d1e4;--g-border:#34587f;color:var(--g-ink);display:flex;flex-direction:column;gap:22px}
+#rulesScreen .rr-guide *{box-sizing:border-box}
+#rulesScreen .rr-guide-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(245px,.9fr);align-items:center;gap:14px;background:radial-gradient(ellipse at 86% 22%,#38589b 0%,transparent 52%),linear-gradient(125deg,#172e4b 0%,#222c56 65%,#28324d 100%);border:1px solid #708ec6;border-radius:24px;padding:26px;box-shadow:0 12px 32px #050e25a8}
+#rulesScreen .rr-guide-kicker,#rulesScreen .rr-guide-section-kicker{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.14em;color:#85eadf}
+#rulesScreen .rr-guide-hero h2{font-size:clamp(27px,4vw,41px);line-height:1.06;color:#ffdfa1;margin:12px 0}
+#rulesScreen .rr-guide-hero p{font-size:15px;line-height:1.55;color:#dbe8fb;margin:0;max-width:55ch}
+#rulesScreen .rr-guide-hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+#rulesScreen .rr-guide-hero-chips span{background:#09233caa;border:1px solid #50769e;border-radius:99px;padding:7px 11px;font-size:12px;font-weight:800;color:#e7f7fb}
+#rulesScreen .rr-guide-hero-art{display:flex;align-items:center;justify-content:center;padding:14px;background:linear-gradient(160deg,#22385a,#121e38);border-radius:18px;border:1px solid #496a97;min-height:168px;overflow:hidden}
+#rulesScreen .rr-guide-hero-art img{width:100%;height:auto;max-width:420px;object-fit:contain;border-radius:10px}
+#rulesScreen .rr-guide-jump{display:flex;flex-wrap:wrap;gap:8px}
+#rulesScreen .rr-guide-jump a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#cce8ff;background:#172d48;border:1px solid #436a94;border-radius:99px;padding:9px 13px;font-size:12px;font-weight:800;min-height:36px;transition:background .15s,border-color .15s}
+#rulesScreen .rr-guide-jump a:hover,#rulesScreen .rr-guide-jump a:focus-visible{background:#274875;border-color:#9fcaec}
+#rulesScreen .rr-guide-chapter{padding:22px;background:linear-gradient(165deg,#112b46,#0b1932);border:1px solid #375879;border-radius:24px;scroll-margin-top:72px;box-shadow:0 8px 24px #07102665}
+#rulesScreen .rr-guide-chapter-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:17px}
+#rulesScreen .rr-guide-chapter h2{font-size:clamp(21px,2.7vw,28px);color:#ffdda3;line-height:1.15;margin:7px 0 0}
+#rulesScreen .rr-guide-tiny{color:#a4c5d9;font-size:12px;font-weight:800;white-space:nowrap}
+#rulesScreen .rr-guide-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#rulesScreen .rr-guide-step{min-width:0;overflow:hidden;border-radius:19px;background:#1e3959;border:1px solid #476e98;box-shadow:inset 0 1px 0 #ffffff1c}
+#rulesScreen .rr-guide-picture{height:180px;position:relative;background:radial-gradient(ellipse at 50% 40%,#254d7a,#142844);border-bottom:1px solid #51779a;display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+#rulesScreen .rr-guide-picture img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:10px}
+#rulesScreen .rr-guide-picture.rr-board-photo img{object-fit:cover;object-position:top center}
+#rulesScreen .rr-guide-picture.rr-portal-photo img{width:auto;max-width:100%;height:100%;object-fit:contain;object-position:top center}
+#rulesScreen .rr-guide-picture.rr-wheel-photo img{height:auto;width:100%;object-fit:contain}
+#rulesScreen .rr-guide-picture.rr-result-photo img{height:100%;width:auto;max-width:100%}
+#rulesScreen .rr-guide-step-index{position:absolute;left:12px;top:12px;display:grid;place-items:center;background:#ffdc94;color:#193351;border:2px solid #fff5cf;border-radius:50%;height:39px;width:39px;font-size:15px;font-weight:1000;box-shadow:0 4px 12px #061a39a8}
+#rulesScreen .rr-guide-step-content{padding:17px 19px 20px}
+#rulesScreen .rr-guide-step h3{font-size:18px;line-height:1.25;margin:0 0 8px;color:#fff1d5}
+#rulesScreen .rr-guide-step p{font-size:13.5px;color:#dce8f6;line-height:1.5;margin:0}
+#rulesScreen .rr-guide-tip{margin-top:13px!important;background:#0f2947;border-left:3px solid #6ddad1;border-radius:5px;padding:9px 11px;color:#b9eee2!important}
+#rulesScreen .rr-guide-lead{color:#c5d8ef;font-size:14px;margin:-4px 0 18px}
+#rulesScreen .rr-fate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#rulesScreen .rr-fate-card{background:#1d3554;border:1px solid #53769c;border-radius:18px;padding:18px;min-width:0}
+#rulesScreen .rr-fate-graphic{height:98px;border-radius:14px;background:radial-gradient(circle at 50% 45%,#4773a2,#182d4e);display:flex;gap:14px;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px}
+#rulesScreen .rr-fate-arrow{font-size:24px;color:#ffda91}
+#rulesScreen .rr-fate-dragon .rr-fate-graphic{background:radial-gradient(circle,#81412d,#1b2b49 75%)}
+#rulesScreen .rr-fate-chest .rr-fate-graphic{background:radial-gradient(circle,#80603b,#1b2b49 75%)}
+#rulesScreen .rr-fate-card h4{font-size:18px;margin:0 0 9px;color:#ffe2a3}
+#rulesScreen .rr-fate-card p{font-size:13px;line-height:1.5;color:#d6e4f5;margin:7px 0}
+#rulesScreen .rr-fate-card p strong{color:#9bebd1}
+#rulesScreen .rr-guide-tool-picture{border:1px solid #526c98;border-radius:17px;overflow:hidden;background:#172b48;padding:9px;text-align:center;margin-bottom:14px}
+#rulesScreen .rr-guide-tool-picture img{display:block;width:100%;height:auto;max-height:265px;object-fit:contain;border-radius:11px;margin:auto}
+#rulesScreen .rr-guide-tool-picture>span{display:block;color:#adc4db;font-size:11px;padding:5px}
+#rulesScreen .rr-guide-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#rulesScreen .rr-guide-tool{display:flex;gap:12px;padding:12px;border-radius:15px;background:#1b3554;border:1px solid #44688b;align-items:flex-start}
+#rulesScreen .rr-tool-symbol{font-size:26px;line-height:1.25;flex:0 0 34px;text-align:center}
+#rulesScreen .rr-guide-tool strong{font-size:14px;color:#ffe2a6}
+#rulesScreen .rr-guide-tool p{margin:4px 0 0;font-size:12.5px;line-height:1.4;color:#d5e6f5}
+#rulesScreen .rr-guide-note{display:flex;align-items:start;gap:12px;padding:14px 16px;background:#163b4a;border:1px solid #3c8586;border-radius:14px;margin-top:14px;font-size:13px;line-height:1.5;color:#dcf9f5}
+#rulesScreen .rr-guide-note>span{font-size:25px}
+#rulesScreen .rr-guide-two-defs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#rulesScreen .rr-guide-two-defs>div{display:flex;align-items:start;gap:12px;padding:16px;border:1px solid #52749c;border-radius:15px;background:#1d3755}
+#rulesScreen .rr-guide-two-defs>div>span{font-size:26px}
+#rulesScreen .rr-guide-two-defs strong{color:#ffe0a4;font-size:15px}
+#rulesScreen .rr-guide-two-defs p{font-size:12.8px;color:#cfe0f1;line-height:1.45;margin:4px 0 0}
+#rulesScreen .rr-guide-expand{margin-top:13px;background:#0a213b;border:1px solid #48759e;border-radius:15px;padding:0;overflow:hidden}
+#rulesScreen .rr-guide-expand summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:15px 17px;font-size:14px;font-weight:900;color:#e6f6ff;list-style:none}
+#rulesScreen .rr-guide-expand summary::-webkit-details-marker{display:none}
+#rulesScreen .rr-guide-expand summary span{font-size:21px;color:#ffdb9f}
+#rulesScreen .rr-guide-expand[open] summary span{transform:rotate(45deg)}
+#rulesScreen .rr-guide-herolist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 13px 13px}
+#rulesScreen .rr-hero-summary{display:flex;align-items:start;gap:11px;border:1px solid #446b93;border-radius:12px;background:#193451;padding:12px}
+#rulesScreen .rr-hero-icon{display:grid;place-items:center;font-size:29px;flex:none;width:49px;height:54px;border-radius:12px;background:#2b4d72}
+#rulesScreen .rr-hero-text{min-width:0}
+#rulesScreen .rr-hero-text h4{font-size:15px;color:#ffe4af;margin:2px 0 7px}
+#rulesScreen .rr-hero-text p{font-size:12px;line-height:1.45;color:#e0edf9;margin:5px 0}
+#rulesScreen .rr-hero-text p b{color:#a5f3dd}
+#rulesScreen .rr-cd-pill{border:1px solid #c4a86e;background:#4b3d36;color:#ffe7a8;white-space:nowrap;border-radius:20px;padding:2px 6px;font-size:10px;font-weight:800}
+#rulesScreen .rr-guide-finish{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:20px;background:#1b3753;border:1px solid #537b9e;border-radius:18px;padding:20px}
+#rulesScreen .rr-guide-finish-art{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:18px 10px;background:radial-gradient(circle at 85% 10%,#3e6b8e,#132f4b);border-radius:13px;border:1px solid #486d92}
+#rulesScreen .rr-guide-finish-art>span:not(.rr-guide-finish-arrow){width:24%;min-height:78px;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:12px;background:linear-gradient(#7bd6e7,#56aace);color:#102e4a;font-weight:1000;font-size:23px;border:3px solid #e8f9ff;box-shadow:0 6px 0 #245275}
+#rulesScreen .rr-guide-finish-art>.rr-guide-finish-arrow{color:#ffd894;font-size:23px}
+#rulesScreen .rr-guide-finish-art>.rr-finish-100{background:linear-gradient(#ffe89e,#e69c42)!important;color:#513417!important;font-size:28px!important}
+#rulesScreen .rr-guide-finish-art>.rr-finish-100 small{font-size:15px}
+#rulesScreen .rr-guide-finish h3{font-size:21px;color:#ffe0a6;margin:0 0 8px}
+#rulesScreen .rr-guide-finish p{font-size:13.5px;color:#d7e5f5;line-height:1.55;margin:0 0 10px}
+#rulesScreen .rr-guide-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;border-radius:19px;padding:21px 24px;background:linear-gradient(105deg,#2f396c,#23536c);border:1px solid #7a94cb}
+#rulesScreen .rr-guide-footer strong{font-size:19px;color:#ffdfa5}
+#rulesScreen .rr-guide-footer p{font-size:13px;line-height:1.4;color:#e1f0ff;margin:5px 0 0}
+#rulesScreen .rr-guide-footer .rr-guide-start{min-width:190px;min-height:50px;font-size:14px}
+@media(max-width:800px){#rulesScreen .rr-guide-hero{grid-template-columns:1fr}#rulesScreen .rr-guide-hero-art{min-height:135px}#rulesScreen .rr-fate-grid{grid-template-columns:1fr}#rulesScreen .rr-fate-card{display:grid;grid-template-columns:94px 1fr;column-gap:14px;align-items:center}#rulesScreen .rr-fate-graphic{grid-row:span 3;margin:0;height:90px;font-size:37px}#rulesScreen .rr-fate-card h4{margin:0}#rulesScreen .rr-fate-card p{margin:3px 0}#rulesScreen .rr-guide-herolist{grid-template-columns:1fr}}
+@media(max-width:650px){#rulesScreen{padding-inline:0}#rulesScreen .rr-guide{gap:15px}#rulesScreen .rr-guide-hero{padding:18px;border-radius:18px}#rulesScreen .rr-guide-hero h2{font-size:28px}#rulesScreen .rr-guide-hero p{font-size:13.5px}#rulesScreen .rr-guide-jump{gap:6px}#rulesScreen .rr-guide-jump a{font-size:11px;padding:7px 9px}#rulesScreen .rr-guide-chapter{padding:15px 12px;border-radius:17px}#rulesScreen .rr-guide-steps,#rulesScreen .rr-guide-tools,#rulesScreen .rr-guide-two-defs{grid-template-columns:1fr}#rulesScreen .rr-guide-picture{height:182px}#rulesScreen .rr-guide-step-content{padding:14px 15px 17px}#rulesScreen .rr-guide-chapter h2{font-size:23px}#rulesScreen .rr-guide-finish{grid-template-columns:1fr;padding:13px}#rulesScreen .rr-guide-finish-art>span:not(.rr-guide-finish-arrow){min-height:69px}#rulesScreen .rr-guide-footer{flex-direction:column;align-items:stretch;padding:18px}#rulesScreen .rr-guide-footer .rr-guide-start{width:100%;min-width:0}#rulesScreen .rr-guide-tiny{display:none}}
+@media(max-width:390px){#rulesScreen .rr-guide-step h3{font-size:16px}#rulesScreen .rr-guide-picture{height:158px}#rulesScreen .rr-guide-chapter{padding:12px 10px}}
+@media(prefers-reduced-motion:reduce){#rulesScreen .rr-guide-jump a{transition:none}}
