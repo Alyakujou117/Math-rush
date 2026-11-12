@@ -57,6 +57,50 @@
 
 <!-- MOBILE PERFORMANCE + PORTAL STABILITY PATCH: game logic remains unchanged -->
 
+<!-- RADICAL RUSH - WINNER PANEL FIX -->
+<style>
+/* Desktop winner screen only */
+@media (min-width: 1000px) {
+
+  html body.in-game
+  #gameScreen.rr-finish-focus
+  #rrGameSidebar > .game-panel:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  html body.in-game
+  #gameScreen.rr-finish-focus
+  #rrGameSidebar #challenge:not(.hidden) {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  html body.in-game
+  #gameScreen.rr-finish-focus
+  #rrGameSidebar #winner:not(.hidden) {
+    display: grid !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 240px !important;
+    max-height: none !important;
+    align-content: center !important;
+    justify-items: center !important;
+  }
+
+}
+</style>
+
 
 </head>
 
