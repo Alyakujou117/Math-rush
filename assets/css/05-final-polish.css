@@ -310,3 +310,152 @@ html body #gameScreen #rrGameSidebar #dice #rrWheelNumbers .rr-wheel-number {
     font-size: 16px !important;
   }
 }
+
+
+/* =========================================
+   RADICAL RUSH - ANDROID DOWNLOAD BUTTON
+   ========================================= */
+
+a.rr-download-app {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 450px;
+  min-height: 76px;
+  box-sizing: border-box;
+  margin: 16px auto;
+  padding: 14px 18px;
+
+  background: linear-gradient(
+    135deg,
+    #7946e8 0%,
+    #5546d9 50%,
+    #245fcd 100%
+  );
+
+  border: 2px solid #a99dff;
+  border-radius: 18px;
+
+  color: #ffffff !important;
+  text-decoration: none !important;
+
+  box-shadow:
+    0 5px 0 #252164,
+    0 10px 22px rgba(25, 20, 95, 0.35);
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* Download icon */
+.rr-download-app .rr-download-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 13px;
+
+  color: white;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+/* Text container */
+.rr-download-app .rr-download-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  text-align: left;
+}
+
+/* Main button title */
+.rr-download-app .rr-download-text strong {
+  display: block;
+  color: #ffffff !important;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+/* Subtitle */
+.rr-download-app .rr-download-text small {
+  display: block;
+  color: #e5e0ff !important;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+/* Right arrow */
+.rr-download-app .rr-download-arrow {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Hover animation */
+a.rr-download-app:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+
+  box-shadow:
+    0 8px 0 #252164,
+    0 14px 25px rgba(25, 20, 95, 0.4);
+}
+
+/* Click animation */
+a.rr-download-app:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #252164;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+  a.rr-download-app {
+    width: 100%;
+    min-height: 68px;
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 15px;
+  }
+
+  .rr-download-app .rr-download-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .rr-download-app .rr-download-text strong {
+    font-size: 14px;
+  }
+
+  .rr-download-app .rr-download-text small {
+    font-size: 11px;
+  }
+
+  .rr-download-app .rr-download-arrow {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.rr-download-app {
+    transition: none;
+  }
+}
