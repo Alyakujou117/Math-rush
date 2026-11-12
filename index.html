@@ -629,6 +629,163 @@
 <script src="assets/js/rr-larger-board-logic.js" id="rr-larger-board-logic"></script>
 <link rel="stylesheet" href="assets/css/05-final-polish.css">
 
+  
+<!-- RADICAL RUSH - VICTORY ANIMATION -->
+<script>
+(function () {
+  'use strict';
+
+  function initializeVictoryAnimation() {
+
+    const panel =
+      document.getElementById('winner');
+
+    const nameNode =
+      document.getElementById('winnerName');
+
+    if (!panel || !nameNode) return;
+
+    let wasVisible = false;
+    let exitTimer = null;
+    let removeTimer = null;
+
+    function removeOldAnimation() {
+      clearTimeout(exitTimer);
+      clearTimeout(removeTimer);
+
+      document.getElementById(
+        'rrVictoryCelebration'
+      )?.remove();
+    }
+
+    function showCelebration() {
+      removeOldAnimation();
+
+      const scene =
+        document.createElement('div');
+
+      scene.id = 'rrVictoryCelebration';
+      scene.setAttribute('aria-hidden', 'true');
+
+      scene.innerHTML =
+        '<div class="rr-victory-card">' +
+        '<div class="rr-victory-cup">🏆</div>' +
+        '<div class="rr-victory-title">VICTORY!</div>' +
+        '<div class="rr-victory-name"></div>' +
+        '<div class="rr-victory-subtitle">' +
+        'The finish line is yours!' +
+        '</div></div>';
+
+      scene.querySelector(
+        '.rr-victory-name'
+      ).textContent = nameNode.textContent;
+
+      const colors = [
+        '#ffde79',
+        '#62f4de',
+        '#fc7ed9',
+        '#a99aff',
+        '#ffffff'
+      ];
+
+      const reducedMotion =
+        window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+      if (!reducedMotion) {
+        for (let i = 0; i < 30; i++) {
+
+          const bit =
+            document.createElement('i');
+
+          bit.className = 'rr-victory-bit';
+
+          bit.style.setProperty(
+            '--x',
+            Math.random() * 100 + '%'
+          );
+
+          bit.style.setProperty(
+            '--color',
+            colors[i % colors.length]
+          );
+
+          bit.style.setProperty(
+            '--duration',
+            (1.6 + Math.random()) + 's'
+          );
+
+          bit.style.setProperty(
+            '--delay',
+            (Math.random() * .7) + 's'
+          );
+
+          bit.style.setProperty(
+            '--drift',
+            (Math.random() * 150 - 75) + 'px'
+          );
+
+          scene.appendChild(bit);
+        }
+      }
+
+      document.body.appendChild(scene);
+
+      requestAnimationFrame(() => {
+        scene.classList.add('visible');
+      });
+
+      exitTimer = setTimeout(() => {
+        scene.classList.add('leaving');
+      }, 2600);
+
+      removeTimer = setTimeout(() => {
+        scene.remove();
+      }, 3250);
+    }
+
+    function checkWinner() {
+
+      const visible =
+        !panel.classList.contains('hidden');
+
+      if (visible && !wasVisible) {
+        showCelebration();
+      }
+
+      if (!visible && wasVisible) {
+        removeOldAnimation();
+      }
+
+      wasVisible = visible;
+    }
+
+    new MutationObserver(
+      checkWinner
+    ).observe(panel, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    checkWinner();
+  }
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      initializeVictoryAnimation,
+      { once: true }
+    );
+
+  } else {
+    initializeVictoryAnimation();
+  }
+
+})();
+</script>
+
 
 </body>
 
